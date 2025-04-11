@@ -23,8 +23,5 @@
     <ClInclude Include="klasy.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
-    <ClInclude Include="struktura.h">
-      <Filter>Pliki źródłowe</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

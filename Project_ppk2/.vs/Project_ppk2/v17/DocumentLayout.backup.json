@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{601BB479-1CD1-4421-920D-34F9C058FD9E}|Project_ppk2\\Project_ppk2.vcxproj|C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{601BB479-1CD1-4421-920D-34F9C058FD9E}|Project_ppk2\\Project_ppk2.vcxproj|solutionrelative:Project_ppk2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601BB479-1CD1-4421-920D-34F9C058FD9E}|Project_ppk2\\Project_ppk2.vcxproj|C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\klasy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{601BB479-1CD1-4421-920D-34F9C058FD9E}|Project_ppk2\\Project_ppk2.vcxproj|solutionrelative:Project_ppk2\\klasy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 232,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\main.cpp",
+              "RelativeDocumentMoniker": "Project_ppk2\\main.cpp",
+              "ToolTip": "C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\main.cpp",
+              "RelativeToolTip": "Project_ppk2\\main.cpp",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAIYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-10T14:12:11.177Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 168,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "klasy.h",
+              "DocumentMoniker": "C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\klasy.h",
+              "RelativeDocumentMoniker": "Project_ppk2\\klasy.h",
+              "ToolTip": "C:\\Users\\kakan\\OneDrive\\Pulpit\\Projekt_Plan\\Project_ppk2\\Project_ppk2\\klasy.h",
+              "RelativeToolTip": "Project_ppk2\\klasy.h",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAswHkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T14:12:12.198Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
