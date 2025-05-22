@@ -1,2 +1,12 @@
 ﻿  main.cpp
-  Project_ppk2.vcxproj -> C:\Users\kakan\OneDrive\Pulpit\Projekt_Plan\Project_ppk2\x64\Debug\Project_ppk2.exe
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(23,43): warning C4305: "argument": obcięcie z "int" do "char"
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(23,43): warning C4309: "argument": obcięcie stałej wartości
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(24,41): warning C4305: "argument": obcięcie z "int" do "char"
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(24,41): warning C4309: "argument": obcięcie stałej wartości
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(199,8): warning C4551: wywołaniu funkcji brakuje listy argumentów
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(143,28): warning C4101: "rozmiar": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(249,8): warning C4551: wywołaniu funkcji brakuje listy argumentów
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(300,9): warning C4551: wywołaniu funkcji brakuje listy argumentów
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(351,9): warning C4551: wywołaniu funkcji brakuje listy argumentów
+C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(399,9): warning C4551: wywołaniu funkcji brakuje listy argumentów
+  Project_ppk2.vcxproj -> C:\Users\Lenovo\Desktop\Projekt_Plan\Project_ppk2\x64\Debug\Project_ppk2.exe

@@ -1,0 +1,81 @@
+Diagram klas i struktur
+
+1. plan
+- Opis: Klasa plan reprezentuje siatkę planu lekcji w postaci tabeli. Zawiera informacje o dniach tygodnia, godzinach lekcyjnych oraz przypisanych przedmiotach.
+- Atrybuty:
+  - tabela[57][16] – tablica przechowująca dane planu lekcji.
+- Metody:
+  - pokaz_plan() – wyświetla plan lekcji.
+  - dodaj_do_planu() – dodaje lekcję do planu.
+  - czy_sa_myslniki() – pomocnicza funkcja do zarządzania myślnikami w tabeli.
+
+2. osoba
+- Opis: Klasa bazowa przechowująca dane osobowe: imię i nazwisko.
+- Atrybuty:
+  - imie – przechowuje imię osoby.
+  - nazwisko – przechowuje nazwisko osoby.
+- Metody:
+  - inicjaly() – wyświetla imię i nazwisko osoby.
+  - imiee() – zwraca imię osoby.
+  - nazwiskoo() – zwraca nazwisko osoby.
+  - Operator = – umożliwia przypisanie wartości między obiektami klasy osoba.
+
+3. uczen: dziedziczy po klasie osoba
+- Opis: Klasa uczen dziedziczy po klasie osoba i dodaje numer grupy dziekańskiej.
+- Atrybuty:
+  - numer_gr – numer grupy dziekańskiej ucznia.
+- Metody:
+  - pokaz_dane() – wyświetla dane ucznia (imię, nazwisko, numer grupy).
+  - zwroc_dane() – zwraca dane ucznia (imię, nazwisko).
+
+4. nauczyciel: dziedziczy po klasie osoba
+- Opis: Klasa nauczyciel dziedziczy po klasie osoba i przechowuje informację o przedmiocie, który nauczyciel prowadzi.
+- Atrybuty:
+  - przedmiot_prowadzony – przedmiot nauczany przez nauczyciela.
+- Metody:
+  - pokaz_dane() – wyświetla dane nauczyciela (imię, nazwisko, przedmiot).
+  - zwroc_dane() – zwraca dane nauczyciela (imię, nazwisko).
+
+5. sala
+- Opis: Klasa sala reprezentuje salę wykładową lub laboratoryjną w systemie.
+- Atrybuty:
+  - typ – typ sali (np. wykładowa, komputerowa).
+  - numer – numer sali.
+- Metody:
+  - pokaz_dane() – wyświetla informacje o sali (numer, typ).
+  - zwroc_dane_s() – zwraca numer sali.
+
+6. lekcja
+- Opis: Klasa lekcja reprezentuje pojedynczą lekcję, która składa się z przedmiotu, typu, sali, nauczyciela i informacji o parzystości tygodnia.
+- Atrybuty:
+  - przedmiot – nazwa przedmiotu.
+  - typ – typ lekcji (np. wykład, ćwiczenia).
+  - parzystosc – informacja o parzystości tygodnia (0 – co tydzień, 1 – parzyste tygodnie, 2 – nieparzyste tygodnie).
+  - klasa – wskaźnik na obiekt klasy sala (sala, w której odbywa się lekcja).
+  - prowadzacy – wskaźnik na obiekt klasy nauczyciel (nauczyciel prowadzący lekcję).
+- Metody:
+  - pokaz_dane() – wyświetla szczegóły lekcji (przedmiot, typ, parzystość, sala, nauczyciel).
+  - zwroc_dane_p() – zwraca nazwę przedmiotu.
+  - getPrzedmiot() – zwraca nazwę przedmiotu.
+  - getTyp() – zwraca typ lekcji.
+  - getNauczyciel() – zwraca wskaźnik na nauczyciela prowadzącego.
+  - getSala() – zwraca wskaźnik na salę.
+
+7. lista
+- Opis: Klasa lista reprezentuje dynamiczną listę, przechowującą elementy typu Node.
+- Atrybuty:
+  - head – wskaźnik na pierwszy element listy.
+  - tail – wskaźnik na ostatni element listy.
+- Metody:
+  - push_back(t val) – dodaje nowy element do listy.
+  - remove(t val) – usuwa element z listy.
+  - getHead() – zwraca wskaźnik na pierwszy element listy.
+  - Destruktor – zwalnia pamięć przy usuwaniu listy.
+
+8. Node
+- Opis: Struktura Node reprezentuje pojedynczy element listy w strukturze lista.
+- Atrybuty:
+  - value – wartość przechowywana w węźle (może być dowolnego typu).
+  - next – wskaźnik na kolejny element listy.
+- Metody:
+  - Konstruktor – inicjalizuje wartość i ustawia wskaźnik na nullptr.

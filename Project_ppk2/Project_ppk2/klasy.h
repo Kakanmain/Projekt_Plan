@@ -5,142 +5,105 @@
 #include <sstream>
 #include <iomanip>
 
-/*class lista {
-	plan*** tablica;
-	int wiersze, kolumny;
+template <typename t>
+struct Node {
+	t value;
+	Node* next;
+
+	Node(t val) : value(val), next(nullptr) {}
+};
+
+template <typename t>
+class lista {
+	Node<t>* head;
+	Node<t>* tail;
+
 public:
-	lista(int w, int k) : wiersze(w), kolumny(k){
-		tablica = new plan ** [wiersze];
-		for (int i = 0; i < wiersze; ++i) {
-			tablica[i] = new plan * [kolumny];
-			for (int j = 0; j < kolumny; ++j) {
-				tablica[i][j] = new plan();
-			}
+	lista() : head(nullptr), tail(nullptr) {}
+
+	Node<t>* getHead() const {
+		return head;
+	}
+
+	void push_back(t val) {
+		Node<t>* newNode = new Node<t>(val);
+
+		if (tail == nullptr) {
+			head = tail = newNode;
 		}
-		
+		else {
+			tail->next = newNode;
+			tail = newNode;
+		}
+	}
+
+	void remove(t val) {
+		if (head == nullptr) return;
+
+		if (head->value == val) {
+			Node<t>* temp = head;
+			head = head->next;
+			if (temp == tail) {
+				tail = nullptr;
+			}
+			delete temp;
+			return;
+		}
+
+		Node<t>* current = head;
+		while (current->next != nullptr && current->next->value != val) {
+			current = current->next;
+		}
+
+		if (current->next != nullptr) {
+			Node<t>* temp = current->next;
+			current->next = temp->next;
+			if (temp == tail) {
+				tail = current;
+			}
+			delete temp;
+		}
 	}
 
 	~lista() {
-		for (int i = 0; i < wiersze; ++i) {
-			for (int j = 0; j < kolumny; ++j)
-				delete tablica[i][j];
-			delete[] tablica[i];
-		}
-		delete[] tablica;
-	}
-};*/
-
-class plan{	
-	int w = 57;
-	int k = 16;
-	std::string tabela[57][16]; 
-public:
-	plan() { //tworzy szkielet planu
-		tabela[0][0] = "Godz.";
-		tabela[0][2] = "      Poniedzialek";
-		tabela[0][4] = "          Wtorek";
-		tabela[0][6] = "          Sroda";
-		tabela[0][8] = "        Czwartek";
-		tabela[0][10] = "         Piatek";
-		tabela[0][12] = "          Sobota";
-		tabela[0][14] = "        Niedziela";
-		
-		//myslniki poziome
-		std::stringstream myslniki, myslinik0;
-		myslniki << std::setw(25) << std::setfill('-') << "-"; //to dla wierszy
-		myslinik0 << std::setw(6) << std::setfill('-') << "-"; //to dla godziny
-		
-		for (int j = 1; j < w; j+=5) {
-			tabela[j][0] = myslinik0.str();
-			for (int i = 1; i < k; i++) {
-				if (i % 2 == 1) {
-
-				}
-				else {
-					tabela[j][i] = myslniki.str();
-				}
-			}
-		}
-		// myslniki pionowe
-		for (int j = 1; j < k; j += 2) { //to dla |
-			for (int i = 0; i < w; i++) {
-				if (i == 1) {
-					tabela[1][j] = "-";
-				} else {
-					tabela[i][j] = "|";
-				}
-			}
-		}
-		
-		//zajmuje sie godzinami
-		int h = 8;
-		int m = 00;
-		for (int i = 2; i <= 55; i++) { 
-			if (m == 60) { // jak jest 60 minuta to zwieksza godzine o 1
-				h++;
-				m = 00;
-				i++;
-			}
-			
-			std::stringstream oss;
-			oss << std::setw(2) << std::setfill('0') << h << ":" << std::setw(2) << std::setfill('0') << m;
-			if (m == 00) {
-				tabela[i][0] = oss.str();
-			}
-			//else { //tu s¹ minuty(co 15)
-			//	tabela[i][0] = oss.str();
-			//}
-			m += 15;	
+		Node<t>* current = head;
+		while (current != nullptr) {
+			Node<t>* next = current->next;
+			delete current;
+			current = next;
 		}
 	}
-
-	void pokaz_plan() {
-		std::cout << "Twoj plan lekcji:" << std::endl << std::endl;
-		for (int x = 0; x < w; x++) {
-			for (int y= 0; y < k; y++) {
-				if (y == 0) {
-					std::cout << std::setw(6) << std::left << tabela[x][y]; //wyswietla godziny
-				}
-				else if (y % 2 == 1) { //wyswietla |
-					std::cout << tabela[x][y];
-					if (y == 15) {
-						std::cout << std::endl;
-					}
-				}
-				else {
-					std::cout << std::setw(25) << std::left << tabela[x][y]; //wyswietla komorki ogolnie
-				}
-			}
-		}
-			
-	}
-
-	~plan() {};
 };
 
-class grupa {
-	int numer;
-	std::string* lista_uczniow = new std::string[20];
-
-public:
-	grupa(int numer) : numer(numer) {
-
-	};
-
-	~grupa() {};
-};
 
 
 class osoba {
 	std::string imie, nazwisko;
 public:
-	osoba(const std::string imie, const std::string nazwisko) : imie(imie), nazwisko(nazwisko){
+	osoba() {}
+	osoba(const std::string& imie, const std::string& nazwisko) : imie(imie), nazwisko(nazwisko){
 
 	}
 
 	void inicjaly() {
 		std::cout << std::endl;
 		std::cout << "Imie: " << imie << std::endl << "Nazwisko: " << nazwisko << std::endl;
+	}
+
+	std::string imiee() const{
+		return imie;
+	}
+
+	std::string nazwiskoo() const{
+		return nazwisko;
+	}
+
+	osoba& operator=(const osoba& a) {
+		if (this != &a) {
+			imie = a.imie;
+			nazwisko = a.nazwisko;
+		}
+		return *this;
 	}
 
 	~osoba() {};
@@ -158,13 +121,18 @@ public:
 		std::cout << "Grupa dziekanska: "<<numer_gr << std::endl;
 	}
 
-
+	void zwroc_dane(std::string& i, std::string& n) const{
+		i = osoba::imiee();
+		n = osoba::nazwiskoo();
+	}
+	
 	~uczen() {};
 };
 
 class nauczyciel : public osoba {
 	std::string przedmiot_prowadzony;
 public:
+	nauczyciel() {}
 	nauczyciel(const std::string imie, const std::string nazwisko, const std::string przedmiot_prowadzony) : osoba(imie, nazwisko), przedmiot_prowadzony(przedmiot_prowadzony){
 
 	}
@@ -174,6 +142,11 @@ public:
 		std::cout << "Przedmiot prowadzony: " << przedmiot_prowadzony << std::endl;
 	}
 
+	void zwroc_dane(std::string& i, std::string& n) const {
+		i = osoba::imiee();
+		n = osoba::nazwiskoo();
+	}
+
 	~nauczyciel() {};
 };
 
@@ -181,6 +154,7 @@ class sala {
 	std::string typ; //wykladowa, laboratoiryjna, komputerowa, ogolna...
 	char numer;
 public:
+	sala() {}
 	sala(std::string typ, char numer) : typ(typ), numer(numer) {
 
 	}
@@ -190,15 +164,25 @@ public:
 		std::cout << "Typ sali: " << typ << std::endl;	
 	}
 
+	void zwroc_dane_s(char& s) const {
+		s = numer;
+	}
+
+	char zwroc_dane() const {
+		return numer;
+	}
+
 	~sala() {};
 };
 
 class lekcja {
+protected:
 	std::string przedmiot, typ;
 	int parzystosc; //0 nie wazne, 1 parzysty dzien, 2 nieparzysty
 	sala* klasa;
 	nauczyciel* prowadzacy;
 public:
+	lekcja() {}
 	lekcja(std::string przedmiot, std::string typ, int parzystosc, sala* nr, nauczyciel* n) : przedmiot(przedmiot), typ(typ), parzystosc(parzystosc), prowadzacy(n), klasa(nr){
 
 	}
@@ -219,7 +203,206 @@ public:
 		klasa->pokaz_dane();
 		std::cout <<"-----------------"<< std::endl;
 	}
+
+	void zwroc_dane_p(std::string& p) const{
+		p = przedmiot;
+	}
+
+	std::string getPrzedmiot() const {
+		return przedmiot;
+	}
+
+	std::string getTyp() const {
+		return typ;
+	}
+
+	nauczyciel* getNauczyciel() const {
+		return prowadzacy;
+	}
+
+	sala* getSala() const {
+		return klasa;
+	}
+
+	~lekcja() {};
 };
 
+class plan : protected lekcja, public nauczyciel, public sala {
+	int w = 57;
+	int k = 16;
+	std::string tabela[57][16];
+public:
+	plan() { //tworzy szkielet planu
+		tabela[0][0] = "Godz.";
+		tabela[0][2] = "      Poniedzialek";
+		tabela[0][4] = "          Wtorek";
+		tabela[0][6] = "          Sroda";
+		tabela[0][8] = "        Czwartek";
+		tabela[0][10] = "         Piatek";
+		tabela[0][12] = "          Sobota";
+		tabela[0][14] = "        Niedziela";
+
+		//myslniki poziome
+		std::stringstream myslniki, myslinik0;
+		myslniki << std::setw(25) << std::setfill('-') << "-"; //to dla wierszy
+		myslinik0 << std::setw(6) << std::setfill('-') << "-"; //to dla godziny
+
+		for (int j = 1; j < w; j += 5) {
+			tabela[j][0] = myslinik0.str();
+			for (int i = 1; i < k; i++) {
+				if (i % 2 == 1) {
+
+				}
+				else {
+					tabela[j][i] = myslniki.str();
+				}
+			}
+		}
+		// myslniki pionowe
+		for (int j = 1; j < k; j += 2) { //to dla |
+			for (int i = 0; i < w; i++) {
+				if (i == 1) {
+					tabela[1][j] = "-";
+				}
+				else {
+					tabela[i][j] = "|";
+				}
+			}
+		}
+
+		//zajmuje sie godzinami
+		int h = 8;
+		int m = 00;
+		for (int i = 2; i <= 55; i++) {
+			if (m == 60) { // jak jest 60 minuta to zwieksza godzine o 1
+				h++;
+				m = 00;
+				i++;
+			}
+
+			std::stringstream oss;
+			oss << std::setw(2) << std::setfill('0') << h << ":" << std::setw(2) << std::setfill('0') << m;
+			if (m == 00) {
+				tabela[i][0] = oss.str();
+			}
+
+			else { //tu s¹ minuty(co 15) mozna zakomentowac
+				tabela[i][0] = oss.str();
+			}
+			m += 15;
+		}
+	}
+
+	void pokaz_plan() {
+		std::cout << "Plan lekcji:" << std::endl << std::endl;
+		for (int x = 0; x < w; x++) {
+			for (int y = 0; y < k; y++) {
+				if (y == 0) {
+					std::cout << std::setw(6) << std::left << tabela[x][y]; //wyswietla godziny
+				}
+				else if (y % 2 == 1) { //wyswietla |
+					std::cout << tabela[x][y];
+					if (y == 15) {
+						std::cout << std::endl;
+					}
+				}
+				else {
+					std::cout << std::setw(25) << std::left << tabela[x][y]; //wyswietla komorki ogolnie
+				}
+			}
+		}
+	}
+
+	void czy_sa_myslniki(int& x) {
+		if ((x - 1) % 5 == 0) {
+			x++;
+		}
+	}
+
+	void dodaj_do_planu(int h, int m, std::string dzien, std::string przedmiot, int ht, int mt) {
+		int x, y, i_minuty;
+		std::stringstream fale, nazwa_lekcji, prowadzacy_ss, typ_ss, sala_ss;
+		fale << std::setw(25) << std::setfill('~') << "~";
+
+		if (dzien == "poniedzialek") {
+			y = 2;
+		}
+		else if (dzien == "wtorek") {
+			y = 4;
+		}
+		else if (dzien == "sroda") {
+			y = 6;
+		}
+		else if (dzien == "czwartek") {
+			y = 8;
+		}
+		else if (dzien == "piatek") {
+			y = 10;
+		}
+		else if (dzien == "sobota") {
+			y = 12;
+		}
+		else if (dzien == "niedziela") {
+			y = 14;
+		}
+		else {
+			std::cout << "Podano zly dzien" << std::endl;
+			std::exit(1);
+		}
+
+		if (h < 8 || h > 18 || (ht == 0 && mt != 45)) {
+			std::cout << "Podano zla godzine" << std::endl;
+			std::exit(1);
+		}
+
+		if (m == 00) {
+			i_minuty = 0;
+		}
+		else if (m == 15) {
+			i_minuty = 1;
+		}
+		else if (m == 30) {
+			i_minuty = 2;
+		}
+		else if (m == 45) {
+			i_minuty = 3;
+		}
+		else {
+			std::cout << "Podano zla minute" << std::endl;
+			std::exit(1);
+		}
+
+		x = 2 + 5 * (-8 + h) + i_minuty; //gorna granica lekcji
+		tabela[x][y] = fale.str();
+		x++;
+
+		czy_sa_myslniki(x); //nazwa lekcji
+		nazwa_lekcji << std::setw(25) << przedmiot;
+		tabela[x][y] = nazwa_lekcji.str();
+		x++;
+
+		//nauczyciel
+		czy_sa_myslniki(x);
+		std::stringstream nauczyciel_ss;
+		nauczyciel_ss << std::setw(25) << osoba::imiee() << " " << osoba::nazwiskoo();
+		tabela[x][y] = nauczyciel_ss.str();
+
+		//typ lekcji
+		czy_sa_myslniki(x);
+		typ_ss << std::setw(12) << lekcja::typ;
+		tabela[x][y] = typ_ss.str();
+
+		//sala
+		/*sala* sala = this->getSala();
+		sala_ss << std::setw(13) << sala->zwroc_dane();
+		tabela[x][y] = sala_ss.str();*/
+
+		//czy_sa_myslniki(x); //dolna granica lekcji
+		int ile = ht * 4 + mt / 15;
+		tabela[x + ile-1][y] = fale.str();
+	}
+
+	~plan() {};
+};
 
 #endif
