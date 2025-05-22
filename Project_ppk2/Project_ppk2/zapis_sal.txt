@@ -1,0 +1,18 @@
+Numer: 3
+Typ: ogolna
+---------------------------
+Numer: A
+Typ: aula
+---------------------------
+Numer: B
+Typ: aula
+---------------------------
+Numer: C
+Typ: aula
+---------------------------
+Numer: a
+Typ: laboratoryjna
+---------------------------
+Numer: 2
+Typ: komputerowa
+---------------------------

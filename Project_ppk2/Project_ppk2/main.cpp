@@ -11,94 +11,10 @@ Mo¿e dawanie danych do listy z pliku?
 #include <iostream>
 #include <algorithm>
 #include <cctype>
+#include <fstream>
 
 #include "klasy.h"
-
-void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale) {
-	// SALE
-	sale.push_back(new sala("ogolna", '3'));
-	sale.push_back(new sala("aula", 'A'));
-	sale.push_back(new sala("aula", 'B'));
-	sale.push_back(new sala("aula", 'C'));
-	sale.push_back(new sala("laboratoryjna", '15a'));
-	sale.push_back(new sala("komputerowa", '12'));
-
-	Node<sala*>* s = sale.getHead();
-	sala* ogolna = s->value; s = s->next;
-	sala* aulaA = s->value; s = s->next;
-	sala* aulaB = s->value; s = s->next;
-	sala* aulaC = s->value; s = s->next;
-	sala* laboratoryjna = s->value; s = s->next;
-	sala* komputerowa = s->value;
-
-	// NAUCZYCIELE
-	nauczyciele.push_back(new nauczyciel("Justyna", "Juszczyk-Synowiec", "fizyka"));
-	nauczyciele.push_back(new nauczyciel("Jerzy", "Bodzenta", "fizyka"));
-	nauczyciele.push_back(new nauczyciel("Jacek", "Checinski", "elektronika i miernictwo"));
-	nauczyciele.push_back(new nauczyciel("Krzysztof", "Bernacki", "elektronika i miernictwo"));
-	nauczyciele.push_back(new nauczyciel("Ewa", "Lobos", "analiza matematyczna i algebra liniowa"));
-	nauczyciele.push_back(new nauczyciel("Bartlomiej", "Pawlik", "analiza matematyczna i algebra liniowa"));
-	nauczyciele.push_back(new nauczyciel("Jan", "Machniewski", "podstawy elektrotechniki"));
-	nauczyciele.push_back(new nauczyciel("Andrzej", "Pulka", "podstawy elektrotechniki"));
-	nauczyciele.push_back(new nauczyciel("Agnieszka", "Danek", "algorytmy i struktury danych"));
-	nauczyciele.push_back(new nauczyciel("Zbigniew", "Czech", "algorytmy i struktury danych"));
-	nauczyciele.push_back(new nauczyciel("Robert", "Tutajewicz", "podstawy informatyki"));
-	nauczyciele.push_back(new nauczyciel("Roman", "Starosolski", "programowanie komputerow"));
-	nauczyciele.push_back(new nauczyciel("Grzegorz", "Kwiatkowski", "programowanie komputerow"));
-	nauczyciele.push_back(new nauczyciel("Tomasz", "Rudnicki", "teoria ukladow cyfrowych"));
-	nauczyciele.push_back(new nauczyciel("Adam", "Opara", "teoria ukladow cyfrowych"));
-	nauczyciele.push_back(new nauczyciel("Piotr", "Zemla", "wychowanie fizyczne"));
-	nauczyciele.push_back(new nauczyciel("Beata", "Badowska-Ekiert", "jezyk angielski"));
-
-	// LEKCJE
-	Node<nauczyciel*>* n = nauczyciele.getHead();
-
-	lekcje.push_back(new lekcja("Fizyka", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Fizyka", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Elektronika i miernictwo", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Elektronika i miernictwo", "WYK", 0, aulaB, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Analiza matematyczna i algebra liniowa", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Analiza matematyczna i algebra liniowa", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy elektrotechniki", "CW", 1, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy elektrotechniki", "WYK", 1, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Algorytmy i struktury danych", "CW", 1, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Algorytmy i struktury danych", "WYK", 1, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy informatyki", "CW", 1, ogolna, n->value));
-	lekcje.push_back(new lekcja("Podstawy informatyki", "WYK", 2, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Programowanie komputerow", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Programowanie komputerow", "LAB", 2, komputerowa, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Teoria ukladow cyfrowych", "CW", 2, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Teoria ukladow cyfrowych", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Wychowanie fizyczne", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Jezyk angielski", "LEKT", 0, ogolna, n->value)); n = n->next;
-
-	// UCZNIOWIE
-	uczniowie.push_back(new uczen("Andrzej", "Piaseczny", 3));
-	uczniowie.push_back(new uczen("Katarzyna", "Nowicka", 1));
-	uczniowie.push_back(new uczen("Michal", "Kowalewski", 4));
-	uczniowie.push_back(new uczen("Patrycja", "Jablonska", 2));
-	uczniowie.push_back(new uczen("Tomasz", "Stepien", 5));
-	uczniowie.push_back(new uczen("Julia", "Wojcik", 6));
-	uczniowie.push_back(new uczen("Sebastian", "Krawczyk", 3));
-	uczniowie.push_back(new uczen("Aleksandra", "Piekarska", 2));
-	uczniowie.push_back(new uczen("lukasz", "Baran", 4));
-	uczniowie.push_back(new uczen("Natalia", "Lis", 1));
-	uczniowie.push_back(new uczen("Damian", "Mazur", 5));
-	uczniowie.push_back(new uczen("Dominika", "Szymanska", 6));
-	uczniowie.push_back(new uczen("Kacper", "Zawadzki", 2));
-	uczniowie.push_back(new uczen("Maja", "Sikora", 3));
-	uczniowie.push_back(new uczen("Piotr", "Blaszczyk", 4));
-	uczniowie.push_back(new uczen("Amelia", "Rutkowska", 1));
-	uczniowie.push_back(new uczen("Jan", "Kubiak", 6));
-	uczniowie.push_back(new uczen("Zuzanna", "Czarnecka", 2));
-	uczniowie.push_back(new uczen("Oliwia", "Kowalczyk", 3));
-	uczniowie.push_back(new uczen("Adam", "Krol", 5));
-	uczniowie.push_back(new uczen("Magdalena", "Pawlak", 4));
-	uczniowie.push_back(new uczen("Bartlomiej", "Jasinski", 2));
-	uczniowie.push_back(new uczen("Karolina", "Witkowska", 6));
-	uczniowie.push_back(new uczen("Marcin", "Lesniak", 1));
-	uczniowie.push_back(new uczen("Joanna", "Sawicka", 3));
-}
+#include "lista.h"
 
 void alt(std::string& p) {
 	std::transform(p.begin(), p.end(), p.begin(), ::tolower);
@@ -140,7 +56,7 @@ void alt(std::string& p) {
 }
 
 void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<lekcja*>& lekcje) {
-	int odp, godzina, minuta, rozmiar, godzina_trwa, minuta_trwa;
+	int odp, godzina, minuta, /*rozmiar,*/ godzina_trwa, minuta_trwa;
 	std::string dzien, przedmiot;
 	plan* plans[6] = { &p1, &p2, &p3, &p4, &p5, &p6 };
 
@@ -196,7 +112,7 @@ void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<le
 
 	}
 	else if (odp == 4) {
-		std::exit;
+		std::exit(0);
 	}
 	else {
 		std::cout << "Bledny numer" << std::endl;
@@ -246,7 +162,7 @@ void f_uczen(lista<uczen*>& uczniowie) {
 		
 	}
 	else if (odp == 4) {
-		std::exit;
+		std::exit(0);
 	}
 	else {
 		std::cout << "Bledny numer" << std::endl;
@@ -297,7 +213,7 @@ void f_nauczyciel(lista<nauczyciel*>& nauczyciele) {
 
 		}
 		else if (odp == 4) {
-			std::exit;
+			std::exit(0);
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -348,7 +264,7 @@ void f_lekcji(lista<lekcja*>& lekcje) {
 
 		}
 		else if (odp == 4) {
-			std::exit;
+			std::exit(0);
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -369,7 +285,7 @@ void f_sala(lista<sala*>& sale) {
 		std::cout << std::endl;
 		if (odp == 1) {
 			int licz = 0;
-			char salaa, sa;
+			std::string salaa, sa;
 
 			std::cout << "Podaj numer sali: ";
 			std::cin >> salaa;
@@ -389,14 +305,14 @@ void f_sala(lista<sala*>& sale) {
 		else if (odp == 2) {
 			std::cout << "===== SALE =====" << std::endl;
 			for (Node<sala*>* curr = sale.getHead(); curr != nullptr; curr = curr->next) {
-				curr->value->pokaz_dane();
+				curr->value->pokaz_dane_2();
 			}
 		}
 		else if (odp == 3) {
 
 		}
 		else if (odp == 4) {
-			std::exit;
+			std::exit(0);
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -414,7 +330,14 @@ int main() {
 	int odp;
 	plan p1, p2, p3, p4, p5, p6;
 
-	inicjalizuj(lista_nauczycieli, lista_uczniow, lista_lekcji, lista_sal);
+	inicjalizuj(lista_nauczycieli, lista_uczniow, lista_lekcji, lista_sal); //inicjalizuje dane
+
+	/*std::ofstream zapis("zapis_lekcji.txt");
+	if (zapis) {
+		for (Node<lekcja*>* curr = lista_lekcji.getHead(); curr != nullptr; curr = curr->next) {
+			zapis << curr->value;
+		}
+	}*/
 
 	//p1.pokaz_plan();
 
@@ -451,22 +374,7 @@ int main() {
 		std::cout << "Bledna odpowiedz. Wybierz pomiedzy 1, a 6" << std::endl;
 	}
 
-	//Usuwanie danych
-	for (Node<nauczyciel*>* curr = lista_nauczycieli.getHead(); curr != nullptr; curr = curr->next) {
-		delete curr->value;
-	}
-
-	for (Node<uczen*>* curr = lista_uczniow.getHead(); curr != nullptr; curr = curr->next) {
-		delete curr->value;
-	}
-
-	for (Node<lekcja*>* curr = lista_lekcji.getHead(); curr != nullptr; curr = curr->next) {
-		delete curr->value;
-	}
-
-	for (Node<sala*>* curr = lista_sal.getHead(); curr != nullptr; curr = curr->next) {
-		delete curr->value;
-	}
+	usun_listy(lista_nauczycieli, lista_uczniow, lista_lekcji, lista_sal); //usuwa dane
 
 	return 0;
 }

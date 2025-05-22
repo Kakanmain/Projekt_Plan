@@ -1,8 +1,10 @@
 #ifndef KLASY_H 
 #define KLASY_H
 
+#include <iostream>
 #include <string>
 #include <sstream>
+#include <fstream>
 #include <iomanip>
 
 template <typename t>
@@ -126,6 +128,10 @@ public:
 		n = osoba::nazwiskoo();
 	}
 	
+	int getNumer_gr() const {
+		return numer_gr;
+	}
+
 	~uczen() {};
 };
 
@@ -147,29 +153,43 @@ public:
 		n = osoba::nazwiskoo();
 	}
 
+	std::string getPrzedmiot_prowadzony() const {
+		return przedmiot_prowadzony;
+	}
+
 	~nauczyciel() {};
 };
 
 class sala {
 	std::string typ; //wykladowa, laboratoiryjna, komputerowa, ogolna...
-	char numer;
+	std::string numer;
 public:
 	sala() {}
-	sala(std::string typ, char numer) : typ(typ), numer(numer) {
+	sala(std::string typ, std::string numer) : typ(typ), numer(numer) {
 
 	}
 
 	void pokaz_dane() {
 		std::cout << "Numer sali: " << numer << std::endl;
-		std::cout << "Typ sali: " << typ << std::endl;	
+		std::cout << "Typ sali: " << typ << std::endl;
 	}
 
-	void zwroc_dane_s(char& s) const {
+	void pokaz_dane_2() {
+		std::cout << "Numer sali: " << numer << std::endl;
+		std::cout << "Typ sali: " << typ << std::endl;
+		std::cout << std::endl;
+	}
+
+	void zwroc_dane_s(std::string& s) const {
 		s = numer;
 	}
 
-	char zwroc_dane() const {
+	std::string getNumer() const {
 		return numer;
+	}
+
+	std::string getTyp() const {
+		return typ;
 	}
 
 	~sala() {};
@@ -214,6 +234,10 @@ public:
 
 	std::string getTyp() const {
 		return typ;
+	}
+
+	int getParzystosc() const {
+		return parzystosc;
 	}
 
 	nauczyciel* getNauczyciel() const {
@@ -393,9 +417,7 @@ public:
 		tabela[x][y] = typ_ss.str();
 
 		//sala
-		/*sala* sala = this->getSala();
-		sala_ss << std::setw(13) << sala->zwroc_dane();
-		tabela[x][y] = sala_ss.str();*/
+		
 
 		//czy_sa_myslniki(x); //dolna granica lekcji
 		int ile = ht * 4 + mt / 15;
@@ -404,5 +426,10 @@ public:
 
 	~plan() {};
 };
+
+std::ostream& operator<<(std::ostream& os, const uczen* u);
+std::ostream& operator<<(std::ostream& os, const nauczyciel* n);
+std::ostream& operator<<(std::ostream& os, const sala* s);
+std::ostream& operator<<(std::ostream& os, const lekcja* l);
 
 #endif
