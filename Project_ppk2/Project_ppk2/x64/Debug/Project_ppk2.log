@@ -1,14 +1,3 @@
 ﻿  lista.cpp
-C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(91,32): error C2665: „lekcja::lekcja”: żadna przeciążona funkcja nie może przekonwertować wszystkich typów argumentów
-      C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\klasy.h(206,2):
-      może to być „lekcja::lekcja(std::string,std::string,int,sala *,nauczyciel *)”
-          C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(91,32):
-          „lekcja::lekcja(std::string,std::string,int,sala *,nauczyciel *)”: nie można dokonać konwersji argumentu 4 z „std::string” do „sala *”
-              C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(91,56):
-              Nie jest dostępny żaden operator konwersji zdefiniowany przez użytkownika, który mógłby wykonać tę konwersję lub operator nie może zostać wywołany
-      C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(91,32):
-      podczas próby dopasowania listy argumentów "(std::string, std::string, int, std::string, std::string)"
-  
-  main.cpp
-C:\Users\kakan\OneDrive\Pulpit\PK\Projekt_Plan\Project_ppk2\Project_ppk2\main.cpp(59,28): warning C4101: "rozmiar": lokalna zmienna, do której nie istnieje odwołanie
-  Generowanie kodu...
+C:\Users\SuperStudent-PL\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(88,17): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+  Project_ppk2.vcxproj -> C:\Users\SuperStudent-PL\Desktop\Projekt_Plan\Project_ppk2\x64\Debug\Project_ppk2.exe

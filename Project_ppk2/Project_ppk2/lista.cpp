@@ -58,8 +58,10 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 	// LEKCJE
 	std::ifstream laduj_lekcje("zapis_lekcji.txt");
 	if (laduj_lekcje) {
-		std::string linia, przedmiot, typ, par, prowadzacy, sala;
-		int parzy;
+		std::string linia, przedmiot, typ, par, prowadzacy, sala_S, im, na, imie_string, nazwisko_string, s;
+		int parzy, koniec = 0;
+		std::stringstream imie, nazwisko;
+		Node<nauczyciel*>* prowadzacy_wsk = nauczyciele.getHead();
 
 		while (std::getline(laduj_lekcje, linia)) {
 			if (linia.find("Przedmiot: ") == 0) {
@@ -82,23 +84,50 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 				}
 			}
 			else if (linia.find("Prowadzacy: ") == 0) {
-				prowadzacy = linia.substr(9);
+				prowadzacy = linia.substr(12);
+				int rozmiar = prowadzacy.size();
+				int licz = 0;
+				for (int i = 0; i < rozmiar; i++) {
+					if (prowadzacy[i] == " ") { //tu jest problem
+						licz++;
+					}
+					else if(licz == 0){
+						imie << prowadzacy[i];
+					}
+					else {
+						nazwisko << prowadzacy[i];
+					}
+				}
+				imie_string = imie.str();
+				nazwisko_string = nazwisko.str();
 			}
 			else if (linia.find("Sala: ") == 0) {
-				sala = linia.substr(6);
+				sala_S = linia.substr(6);
 			}
 			else if (linia.find("-") == 0) {
-				lekcje.push_back(new lekcja(przedmiot, typ, parzy, prowadzacy, sala));
+				for (Node<nauczyciel*>* curr_n = nauczyciele.getHead(); curr_n != nullptr || koniec == 1; curr_n = curr_n->next) {
+					curr_n->value->zwroc_dane(im, na);
+					if (imie_string == im && nazwisko_string == na) {
+						for (Node<sala*>* curr_s = sale.getHead(); curr_s != nullptr || koniec == 1; curr_s = curr_s->next) {
+							curr_s->value->zwroc_dane_s(s);
+							if (sala_S == s) {
+								lekcje.push_back(new lekcja(przedmiot, typ, parzy, curr_s->value, curr_n->value));
+								koniec++;
+							}
+						}
+					}
+				}
+				
 
-				//Tu kontynuuj. Prowadzacy i sala s¹ stringami, a nie np. *sala.
+				//Tu kontynuuj. Prowadzacy i sala s¹ stringami, a nie np. *sala. ZnaleŸæ gdzie jest dany nauczyciel w liscie i go porownac 
 			}
 		}
 	}
 	laduj_lekcje.close();
 
-	/*Node<nauczyciel*>* n = nauczyciele.getHead();
+	//Node<nauczyciel*>* n = nauczyciele.getHead();
 
-	lekcje.push_back(new lekcja("Fizyka", "CW", 0, ogolna, n->value)); n = n->next;
+	/*lekcje.push_back(new lekcja("Fizyka", "CW", 0, ogolna, n->value)); n = n->next;
 	lekcje.push_back(new lekcja("Fizyka", "WYK", 0, aulaA, n->value)); n = n->next;
 	lekcje.push_back(new lekcja("Elektronika i miernictwo", "CW", 0, ogolna, n->value)); n = n->next;
 	lekcje.push_back(new lekcja("Elektronika i miernictwo", "WYK", 0, aulaB, n->value)); n = n->next;

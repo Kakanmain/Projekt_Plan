@@ -203,28 +203,29 @@ protected:
 	nauczyciel* prowadzacy;
 public:
 	lekcja() {}
-	lekcja(std::string przedmiot, std::string typ, int parzystosc, sala* nr, nauczyciel* n) : przedmiot(przedmiot), typ(typ), parzystosc(parzystosc), prowadzacy(n), klasa(nr){
+	lekcja(std::string przedmiot, std::string typ, int parzystosc, sala* nr, nauczyciel* n) : przedmiot(przedmiot), typ(typ), parzystosc(parzystosc), prowadzacy(n), klasa(nr) {
 
 	}
 
 	void pokaz_dane() {
 		std::cout << "-----------------" << std::endl;
-		std::cout << przedmiot << ":" << std::endl << "Typ: "<< typ << std::endl;
-		if (parzystosc == 0){
-		std::cout<<"Co tydzien" << std::endl;
+		std::cout << przedmiot << ":" << std::endl << "Typ: " << typ << std::endl;
+		if (parzystosc == 0) {
+			std::cout << "Co tydzien" << std::endl;
 		}
 		else if (parzystosc == 1) {
 			std::cout << "Tylko parzyste tygodnie" << std::endl;
-		}else if(parzystosc == 2) {
+		}
+		else if (parzystosc == 2) {
 			std::cout << "Tylko nieparzyste tygodnie" << std::endl;
 		}
 		std::cout << "Prowadzacy: ";
 		prowadzacy->pokaz_dane();
 		klasa->pokaz_dane();
-		std::cout <<"-----------------"<< std::endl;
+		std::cout << "-----------------" << std::endl;
 	}
 
-	void zwroc_dane_p(std::string& p) const{
+	void zwroc_dane_p(std::string& p) const {
 		p = przedmiot;
 	}
 
