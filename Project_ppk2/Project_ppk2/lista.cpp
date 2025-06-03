@@ -25,14 +25,6 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 	}
 	laduj_sale.close();
 
-	Node<sala*>* s = sale.getHead();
-	sala* ogolna = s->value; s = s->next;
-	sala* aulaA = s->value; s = s->next;
-	sala* aulaB = s->value; s = s->next;
-	sala* aulaC = s->value; s = s->next;
-	sala* laboratoryjna = s->value; s = s->next;
-	sala* komputerowa = s->value;
-
 	// NAUCZYCIELE
 	std::ifstream laduj_nauczycieli("zapis_nauczycieli.txt");
 	if (laduj_nauczycieli) {
@@ -59,11 +51,12 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 	std::ifstream laduj_lekcje("zapis_lekcji.txt");
 	if (laduj_lekcje) {
 		std::string linia, przedmiot, typ, par, prowadzacy, sala_S, im, na, imie_string, nazwisko_string, s;
-		int parzy, koniec = 0;
-		std::stringstream imie, nazwisko;
+		int parzy, koniec;
 		Node<nauczyciel*>* prowadzacy_wsk = nauczyciele.getHead();
 
 		while (std::getline(laduj_lekcje, linia)) {
+			std::stringstream imie, nazwisko;
+
 			if (linia.find("Przedmiot: ") == 0) {
 				przedmiot = linia.substr(11);
 			}
@@ -88,7 +81,7 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 				int rozmiar = prowadzacy.size();
 				int licz = 0;
 				for (int i = 0; i < rozmiar; i++) {
-					if (prowadzacy[i] == " ") { //tu jest problem
+					if (prowadzacy[i] == ' ') { //tu jest problem
 						licz++;
 					}
 					else if(licz == 0){
@@ -105,74 +98,49 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 				sala_S = linia.substr(6);
 			}
 			else if (linia.find("-") == 0) {
-				for (Node<nauczyciel*>* curr_n = nauczyciele.getHead(); curr_n != nullptr || koniec == 1; curr_n = curr_n->next) {
-					curr_n->value->zwroc_dane(im, na);
-					if (imie_string == im && nazwisko_string == na) {
-						for (Node<sala*>* curr_s = sale.getHead(); curr_s != nullptr || koniec == 1; curr_s = curr_s->next) {
+				koniec = 0;
+				for (Node<nauczyciel*>* curr_n = nauczyciele.getHead(); curr_n != nullptr || koniec != 1; curr_n = curr_n->next) {
+					curr_n->value->zwroc_dane(im, na); //bierze imie i nazwisko z listy zaladowanej
+					if (imie_string == im && nazwisko_string == na) { //porownuje je z tym co jest zapisane i jesli jest te same to...
+						for (Node<sala*>* curr_s = sale.getHead(); curr_s != nullptr; curr_s = curr_s->next) { //...bierze sale i porownuje ja z ta co jest zapisana i...
 							curr_s->value->zwroc_dane_s(s);
-							if (sala_S == s) {
+							if (sala_S == s) { //...jesli to sie zgadza to moze dopiero wyslac lekcje do listy
 								lekcje.push_back(new lekcja(przedmiot, typ, parzy, curr_s->value, curr_n->value));
 								koniec++;
+								break;
 							}
+						}
+						if (koniec == 1) {
+							break;
 						}
 					}
 				}
-				
-
-				//Tu kontynuuj. Prowadzacy i sala s¹ stringami, a nie np. *sala. ZnaleŸæ gdzie jest dany nauczyciel w liscie i go porownac 
 			}
 		}
 	}
 	laduj_lekcje.close();
 
-	//Node<nauczyciel*>* n = nauczyciele.getHead();
-
-	/*lekcje.push_back(new lekcja("Fizyka", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Fizyka", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Elektronika i miernictwo", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Elektronika i miernictwo", "WYK", 0, aulaB, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Analiza matematyczna i algebra liniowa", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Analiza matematyczna i algebra liniowa", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy elektrotechniki", "CW", 1, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy elektrotechniki", "WYK", 1, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Algorytmy i struktury danych", "CW", 1, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Algorytmy i struktury danych", "WYK", 1, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Podstawy informatyki", "CW", 1, ogolna, n->value));
-	lekcje.push_back(new lekcja("Podstawy informatyki", "WYK", 2, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Programowanie komputerow", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Programowanie komputerow", "LAB", 2, komputerowa, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Teoria ukladow cyfrowych", "CW", 2, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Teoria ukladow cyfrowych", "WYK", 0, aulaA, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Wychowanie fizyczne", "CW", 0, ogolna, n->value)); n = n->next;
-	lekcje.push_back(new lekcja("Jezyk angielski", "LEKT", 0, ogolna, n->value)); n = n->next;*/
-
 	// UCZNIOWIE
-	uczniowie.push_back(new uczen("Andrzej", "Piaseczny", 3));
-	uczniowie.push_back(new uczen("Katarzyna", "Nowicka", 1));
-	uczniowie.push_back(new uczen("Michal", "Kowalewski", 4));
-	uczniowie.push_back(new uczen("Patrycja", "Jablonska", 2));
-	uczniowie.push_back(new uczen("Tomasz", "Stepien", 5));
-	uczniowie.push_back(new uczen("Julia", "Wojcik", 6));
-	uczniowie.push_back(new uczen("Sebastian", "Krawczyk", 3));
-	uczniowie.push_back(new uczen("Aleksandra", "Piekarska", 2));
-	uczniowie.push_back(new uczen("lukasz", "Baran", 4));
-	uczniowie.push_back(new uczen("Natalia", "Lis", 1));
-	uczniowie.push_back(new uczen("Damian", "Mazur", 5));
-	uczniowie.push_back(new uczen("Dominika", "Szymanska", 6));
-	uczniowie.push_back(new uczen("Kacper", "Zawadzki", 2));
-	uczniowie.push_back(new uczen("Maja", "Sikora", 3));
-	uczniowie.push_back(new uczen("Piotr", "Blaszczyk", 4));
-	uczniowie.push_back(new uczen("Amelia", "Rutkowska", 1));
-	uczniowie.push_back(new uczen("Jan", "Kubiak", 6));
-	uczniowie.push_back(new uczen("Zuzanna", "Czarnecka", 2));
-	uczniowie.push_back(new uczen("Oliwia", "Kowalczyk", 3));
-	uczniowie.push_back(new uczen("Adam", "Krol", 5));
-	uczniowie.push_back(new uczen("Magdalena", "Pawlak", 4));
-	uczniowie.push_back(new uczen("Bartlomiej", "Jasinski", 2));
-	uczniowie.push_back(new uczen("Karolina", "Witkowska", 6));
-	uczniowie.push_back(new uczen("Marcin", "Lesniak", 1));
-	uczniowie.push_back(new uczen("Joanna", "Sawicka", 3));
-	uczniowie.push_back(new uczen("Baltazar", "Gabka", 5));
+	std::ifstream laduj_uczniow("zapis_uczniow.txt");
+	if (laduj_uczniow) {
+		std::string linia, imie, nazwisko, nr_grupy;
+
+		while (std::getline(laduj_uczniow, linia)) {
+			if (linia.find("Imie: ") == 0) {
+				imie = linia.substr(6);
+			}
+			else if (linia.find("Nazwisko: ") == 0) {
+				nazwisko = linia.substr(10);
+			}
+			else if (linia.find("Numer_gr: ") == 0) {
+				nr_grupy = linia.substr(10);
+			}
+			else if (linia.find("-") == 0) {
+				uczniowie.push_back(new uczen(imie, nazwisko, nr_grupy));
+			}
+		}
+	}
+	laduj_uczniow.close();
 }
 
 void usun_listy(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale) {
@@ -193,7 +161,7 @@ void usun_listy(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista
 	}
 }
 
-std::ostream& operator<<(std::ostream& os, const uczen* u) {
+std::ostream& operator<<(std::ostream& os, const uczen* u) { // uczen
 	if (!u) return os;
 
 	std::string imie, nazwisko;
@@ -205,7 +173,7 @@ std::ostream& operator<<(std::ostream& os, const uczen* u) {
 	return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const nauczyciel* n) {
+std::ostream& operator<<(std::ostream& os, const nauczyciel* n) { // nauczyciel
 	if (!n) return os;
 
 	std::string imie, nazwisko;
@@ -217,7 +185,7 @@ std::ostream& operator<<(std::ostream& os, const nauczyciel* n) {
 	return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const sala* s) {
+std::ostream& operator<<(std::ostream& os, const sala* s) { // sala
 	if (!s) return os;
 
 	os << "Numer: " << s->getNumer() << std::endl;
@@ -226,7 +194,7 @@ std::ostream& operator<<(std::ostream& os, const sala* s) {
 	return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const lekcja* l) {
+std::ostream& operator<<(std::ostream& os, const lekcja* l) { // lekcja
 	if (!l) return os;
 
 	os << "Przedmiot: " << l->getPrzedmiot() << std::endl;

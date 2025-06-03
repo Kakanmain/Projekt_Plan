@@ -1,3 +1,7 @@
 ﻿  lista.cpp
-C:\Users\SuperStudent-PL\Desktop\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(88,17): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-  Project_ppk2.vcxproj -> C:\Users\SuperStudent-PL\Desktop\Projekt_Plan\Project_ppk2\x64\Debug\Project_ppk2.exe
+C:\Users\kakan\OneDrive\Pulpit\Projekt_Plan\Project_ppk2\Project_ppk2\lista.cpp(81,17): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+  lista.h
+  main.cpp
+  Generowanie kodu...
+x64\Debug\lista.obj : warning LNK4042: obiekt określono więcej niż raz; dodatkowe wystąpienia zostały zignorowane
+  Project_ppk2.vcxproj -> C:\Users\kakan\OneDrive\Pulpit\Projekt_Plan\Project_ppk2\x64\Debug\Project_ppk2.exe

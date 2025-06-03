@@ -3,9 +3,9 @@ Projekt: Plan lekcji
 Przy stworzeniu planu, tworzy sie ogolny zarys planu lekcji. (Dni, liczba mozliwych lekcji i godziny) GIT
 Plan bedzie tez mial kazdy nauczyciel i sala.
 Plan mozna wyswietlic, co bedzie pokazywalo zajecia, godziny, itp.
-Po zapytaniu o przedmiot pokaze kiedy jest w jakiej sali.
+Po zapytaniu o przedmiot pokaze kiedy jest w jakiej sali. GIT
 Po zapytanu o sale wyswietli jakie zajecia i kiedy sa w tej sali
-Mo¿e dawanie danych do listy z pliku?
+Mo¿e dawanie danych do listy z pliku? GIT
 */
 
 #include <iostream>
@@ -50,7 +50,7 @@ void alt(std::string& p) {
 		p = "Jezyk angielski";
 	}
 	else {
-		std::cout << "Zla nazwa przedmiotu!" << std::endl;
+		std::cerr << "Zla nazwa przedmiotu!" << std::endl;
 		std::exit(1);
 	}
 }
@@ -64,7 +64,7 @@ void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<le
 	std::cout << "1. Pokaz plan lekcji" << std::endl;
 	std::cout << "2. Dodaj lekcje do planu" << std::endl;
 	std::cout << "3. Usun lekcje z planu" << std::endl;
-	std::cout << "4. Wyjdz" << std::endl;
+	std::cout << "4. Wroc" << std::endl;
 	std::cout << "Wybierz opcje: ";
 	std::cin >> odp;
 	std::cout << std::endl;
@@ -112,7 +112,7 @@ void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<le
 
 	}
 	else if (odp == 4) {
-		std::exit(0);
+		//tu ma byc nic
 	}
 	else {
 		std::cout << "Bledny numer" << std::endl;
@@ -125,7 +125,7 @@ void f_uczen(lista<uczen*>& uczniowie) {
 	std::cout << "1. Pokaz dane ucznia" << std::endl;
 	std::cout << "2. Pokaz dane wszystkich uczniow" << std::endl;
 	std::cout << "3. Pokaz plan lekcji ucznia" << std::endl;
-	std::cout << "4. Wyjdz" << std::endl;
+	std::cout << "4. Wroc" << std::endl;
 	std::cout << "Wybierz opcje: ";
 	std::cin >> odp;
 	std::cout << std::endl;
@@ -162,7 +162,7 @@ void f_uczen(lista<uczen*>& uczniowie) {
 		
 	}
 	else if (odp == 4) {
-		std::exit(0);
+		//tu ma byc nic
 	}
 	else {
 		std::cout << "Bledny numer" << std::endl;
@@ -176,7 +176,7 @@ void f_nauczyciel(lista<nauczyciel*>& nauczyciele) {
 		std::cout << "1. Pokaz dane Nauczyciela" << std::endl;
 		std::cout << "2. Pokaz dane wszystkich nauczycieli" << std::endl;
 		std::cout << "3. Pokaz plan lekcji nauczyciela" << std::endl;
-		std::cout << "4. Wyjdz" << std::endl;
+		std::cout << "4. Wroc" << std::endl;
 		std::cout << "Wybierz opcje: ";
 		std::cin >> odp;
 		std::cout << std::endl;
@@ -213,7 +213,7 @@ void f_nauczyciel(lista<nauczyciel*>& nauczyciele) {
 
 		}
 		else if (odp == 4) {
-			std::exit(0);
+			//tu ma byc nic
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -227,8 +227,8 @@ void f_lekcji(lista<lekcja*>& lekcje) {
 		std::cout << "===Lekcja===" << std::endl;
 		std::cout << "1. Pokaz dane lekcji" << std::endl;
 		std::cout << "2. Pokaz dane wszystkich lekcji" << std::endl;
-		std::cout << "3. Pokaz plan lekcji lekcji" << std::endl;
-		std::cout << "4. Wyjdz" << std::endl;
+		std::cout << "3. Pokaz plan lekcji przedmiotu" << std::endl;
+		std::cout << "4. Wroc" << std::endl;
 		std::cout << "Wybierz opcje: ";
 		std::cin >> odp;
 		std::cout << std::endl;
@@ -264,7 +264,7 @@ void f_lekcji(lista<lekcja*>& lekcje) {
 
 		}
 		else if (odp == 4) {
-			std::exit(0);
+			//tu ma byc nic
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -279,7 +279,7 @@ void f_sala(lista<sala*>& sale) {
 		std::cout << "1. Pokaz dane sali" << std::endl;
 		std::cout << "2. Pokaz dane wszystkich sal" << std::endl;
 		std::cout << "3. Pokaz plan lekcji sali" << std::endl;
-		std::cout << "4. Wyjdz" << std::endl;
+		std::cout << "4. Wroc" << std::endl;
 		std::cout << "Wybierz opcje: ";
 		std::cin >> odp;
 		std::cout << std::endl;
@@ -312,7 +312,7 @@ void f_sala(lista<sala*>& sale) {
 
 		}
 		else if (odp == 4) {
-			std::exit(0);
+			//tu ma byc nic
 		}
 		else {
 			std::cout << "Bledny numer" << std::endl;
@@ -341,37 +341,40 @@ int main() {
 
 	//p1.pokaz_plan();
 
-	std::cout << "===MENU===" << std::endl;
-	std::cout << "1. Plan lekcji" << std::endl;
-	std::cout << "2. Uczen" << std::endl;
-	std::cout << "3. Nauczyciel" << std::endl;
-	std::cout << "4. Lekcja" << std::endl;
-	std::cout << "5. Sala" << std::endl;
-	std::cout << "6. Wyjdz" << std::endl;
-	std::cout << "Wybierz opcje: ";
-	std::cin >> odp;
-	std::cout << std::endl;
+	while (true) { //dzieki temu while program sie nie zamyka poki sie nie wybierze opcji 6
+		std::cout << std::endl;
+		std::cout << "===MENU===" << std::endl;
+		std::cout << "1. Plan lekcji" << std::endl;
+		std::cout << "2. Uczen" << std::endl;
+		std::cout << "3. Nauczyciel" << std::endl;
+		std::cout << "4. Lekcja" << std::endl;
+		std::cout << "5. Sala" << std::endl;
+		std::cout << "6. Wyjdz" << std::endl;
+		std::cout << "Wybierz opcje: ";
+		std::cin >> odp;
+		std::cout << std::endl;
 
-	if (odp == 1) {
-		f_plan(p1, p2, p3, p4, p5, p6, lista_lekcji);
-	}
-	else if (odp == 2) {
-		f_uczen(lista_uczniow);
-	}
-	else if (odp == 3) {
-		f_nauczyciel(lista_nauczycieli);
-	}
-	else if (odp == 4) {
-		f_lekcji(lista_lekcji);
-	}
-	else if (odp == 5) {
-		f_sala(lista_sal);
-	}
-	else if (odp == 6) {
-		return 0;
-	}
-	else {
-		std::cout << "Bledna odpowiedz. Wybierz pomiedzy 1, a 6" << std::endl;
+		if (odp == 1) {
+			f_plan(p1, p2, p3, p4, p5, p6, lista_lekcji);
+		}
+		else if (odp == 2) {
+			f_uczen(lista_uczniow);
+		}
+		else if (odp == 3) {
+			f_nauczyciel(lista_nauczycieli);
+		}
+		else if (odp == 4) {
+			f_lekcji(lista_lekcji);
+		}
+		else if (odp == 5) {
+			f_sala(lista_sal);
+		}
+		else if (odp == 6) {
+			return 0;
+		}
+		else {
+			std::cout << "Bledna odpowiedz. Wybierz pomiedzy 1, a 6" << std::endl;
+		}
 	}
 
 	usun_listy(lista_nauczycieli, lista_uczniow, lista_lekcji, lista_sal); //usuwa dane

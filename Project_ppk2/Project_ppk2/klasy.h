@@ -112,9 +112,9 @@ public:
 };
 
 class uczen : public osoba{
-	int numer_gr;
+	std::string numer_gr;
 public:
-	uczen(const std::string imie, const std::string nazwisko, int numer_gr) : osoba(imie, nazwisko), numer_gr(numer_gr) {
+	uczen(const std::string imie, const std::string nazwisko, const std::string numer_gr) : osoba(imie, nazwisko), numer_gr(numer_gr) {
 		
 	}
 
@@ -128,7 +128,7 @@ public:
 		n = osoba::nazwiskoo();
 	}
 	
-	int getNumer_gr() const {
+	std::string getNumer_gr() const {
 		return numer_gr;
 	}
 
@@ -401,7 +401,8 @@ public:
 		tabela[x][y] = fale.str();
 		x++;
 
-		czy_sa_myslniki(x); //nazwa lekcji
+		//nazwa lekcji
+		czy_sa_myslniki(x);
 		nazwa_lekcji << std::setw(25) << przedmiot;
 		tabela[x][y] = nazwa_lekcji.str();
 		x++;
