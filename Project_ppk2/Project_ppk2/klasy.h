@@ -1,3 +1,5 @@
+/** @file */
+
 #ifndef KLASY_H 
 #define KLASY_H
 
@@ -252,7 +254,7 @@ public:
 	~lekcja() {};
 };
 
-class plan : protected lekcja, public nauczyciel, public sala {
+class plan : protected nauczyciel, protected sala {
 	int w = 57;
 	int k = 16;
 	std::string tabela[57][16];
@@ -344,30 +346,32 @@ public:
 		}
 	}
 
-	void dodaj_do_planu(int h, int m, std::string dzien, std::string przedmiot, int ht, int mt) {
+	void dodaj_do_planu(int h, int m, std::string dzien, std::string przedmiot, std::string typ, int ht, int mt, lista<lekcja*>& lekcje) {
 		int x, y, i_minuty;
-		std::stringstream fale, nazwa_lekcji, prowadzacy_ss, typ_ss, sala_ss;
+		std::stringstream fale, nazwa_lekcji, typ_ss, nauczyciel_ss, sal;
+		std::string nr_sali, imie, nazwisko;
+
 		fale << std::setw(25) << std::setfill('~') << "~";
 
-		if (dzien == "poniedzialek") {
+		if (dzien == "poniedzialek" || dzien == "pon") {
 			y = 2;
 		}
-		else if (dzien == "wtorek") {
+		else if (dzien == "wtorek" || dzien == "wt") {
 			y = 4;
 		}
-		else if (dzien == "sroda") {
+		else if (dzien == "sroda" || dzien == "sr") {
 			y = 6;
 		}
-		else if (dzien == "czwartek") {
+		else if (dzien == "czwartek" || dzien == "czw") {
 			y = 8;
 		}
-		else if (dzien == "piatek") {
+		else if (dzien == "piatek" || dzien == "pt") {
 			y = 10;
 		}
-		else if (dzien == "sobota") {
+		else if (dzien == "sobota" || dzien == "sob") {
 			y = 12;
 		}
-		else if (dzien == "niedziela") {
+		else if (dzien == "niedziela" || dzien == "nd") {
 			y = 14;
 		}
 		else {
@@ -397,6 +401,22 @@ public:
 			std::exit(1);
 		}
 
+		lekcja* zgodna = nullptr;
+		for (Node<lekcja*>* curr = lekcje.getHead(); curr != nullptr; curr = curr->next) {
+			if (curr->value->getPrzedmiot() == przedmiot && curr->value->getTyp() == typ) {
+				zgodna = curr->value;
+				break;
+			}
+		}
+		if (zgodna == nullptr) {
+			std::cout << "Nie znaleziono lekcji o nazwie: " << przedmiot << std::endl;
+			return;
+		}
+		nauczyciel* prow = zgodna->getNauczyciel();
+		sala* sala_ss = zgodna->getSala();
+		prow->zwroc_dane(imie, nazwisko);
+		sala_ss->zwroc_dane_s(nr_sali);
+
 		x = 2 + 5 * (-8 + h) + i_minuty; //gorna granica lekcji
 		tabela[x][y] = fale.str();
 		x++;
@@ -409,17 +429,18 @@ public:
 
 		//nauczyciel
 		czy_sa_myslniki(x);
-		std::stringstream nauczyciel_ss;
-		nauczyciel_ss << std::setw(25) << osoba::imiee() << " " << osoba::nazwiskoo();
+		nauczyciel_ss << std::setw(25) << imie << " " << nazwisko;
 		tabela[x][y] = nauczyciel_ss.str();
 
 		//typ lekcji
 		czy_sa_myslniki(x);
-		typ_ss << std::setw(12) << lekcja::typ;
+		typ_ss << std::setw(12) << typ;
 		tabela[x][y] = typ_ss.str();
 
 		//sala
-		
+		czy_sa_myslniki(x);
+		sal << std::setw(12) << sala_ss;
+		tabela[x][y] = sal.str();
 
 		//czy_sa_myslniki(x); //dolna granica lekcji
 		int ile = ht * 4 + mt / 15;

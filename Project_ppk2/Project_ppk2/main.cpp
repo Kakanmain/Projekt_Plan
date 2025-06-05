@@ -1,3 +1,4 @@
+/** @file */
 /*
 Projekt: Plan lekcji
 Przy stworzeniu planu, tworzy sie ogolny zarys planu lekcji. (Dni, liczba mozliwych lekcji i godziny) GIT
@@ -57,7 +58,7 @@ void alt(std::string& p) {
 
 void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<lekcja*>& lekcje) {
 	int odp, godzina, minuta, /*rozmiar,*/ godzina_trwa, minuta_trwa;
-	std::string dzien, przedmiot;
+	std::string dzien, przedmiot, typ;
 	plan* plans[6] = { &p1, &p2, &p3, &p4, &p5, &p6 };
 
 	std::cout << "===Plan lekcji===" << std::endl;
@@ -96,12 +97,15 @@ void f_plan(plan& p1, plan& p2, plan& p3, plan& p4, plan& p5, plan& p6, lista<le
 		std::cin >> przedmiot;
 		alt(przedmiot);
 
+		std::cout << "Podaj typ przedmiotu: ";
+		std::cin >> typ;
+
 		std::cout << "Podaj czas trwania (np. 1 30 dla 1h 30min): ";
 		std::cin >> godzina_trwa >> minuta_trwa;
 		std::cout<< std::endl;
 
 		if (odp >= 1 && odp <= 6) {
-			plans[odp - 1]->dodaj_do_planu(godzina, minuta, dzien, przedmiot, godzina_trwa, minuta_trwa);
+			plans[odp - 1]->dodaj_do_planu(godzina, minuta, dzien, przedmiot, typ, godzina_trwa, minuta_trwa, lekcje);
 		}
 		else {
 			std::cout << "Bledny numer grupy" << std::endl;
