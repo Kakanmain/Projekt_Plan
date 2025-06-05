@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['nauczyciel_0',['nauczyciel',['../classnauczyciel.html',1,'']]],
+  ['nazwiskoo_1',['nazwiskoo',['../classosoba.html#ac012a5b42f7c458898ffd6356dd8dfeb',1,'osoba']]],
+  ['node_2',['Node',['../struct_node.html',1,'']]]
+];

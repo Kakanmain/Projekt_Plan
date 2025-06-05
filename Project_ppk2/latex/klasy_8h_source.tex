@@ -1,0 +1,504 @@
+\doxysection{klasy.\+h}
+\hypertarget{klasy_8h_source}{}\label{klasy_8h_source}\index{Project\_ppk2/klasy.h@{Project\_ppk2/klasy.h}}
+\mbox{\hyperlink{klasy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ KLASY\_H\ }}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ KLASY\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }Node\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ t\ value;}
+\DoxyCodeLine{00019\ \ \ \ \ Node*\ next;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ Node(t\ val)\ :\ value(val),\ next(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }lista\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ head;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ tail;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ lista()\ :\ head(\textcolor{keyword}{nullptr}),\ tail(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ getHead()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ head;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlista_a7d097b9b97ae7be60d026bd17bd4d6a7}{push\_back}}(t\ val)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node<t>}}(val);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tail\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ newNode;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ newNode;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ newNode;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlista_a7a7c829da1b0d5705fc2c9c6f0b5a5ce}{remove}}(t\ val)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head-\/>value\ ==\ val)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ temp\ =\ head;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ tail)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ current\ =\ head;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current-\/>next\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ current-\/>next-\/>value\ !=\ val)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>next\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ temp\ =\ current-\/>next;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ current-\/>next\ =\ temp-\/>next;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ tail)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ current;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classlista}{\string~lista}}()\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ current\ =\ head;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<t>}}*\ next\ =\ current-\/>next;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ current;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ next;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }osoba\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ std::string\ imie,\ nazwisko;}
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ \ \ \ \ osoba()\ \{\}}
+\DoxyCodeLine{00102\ \ \ \ \ osoba(\textcolor{keyword}{const}\ std::string\&\ imie,\ \textcolor{keyword}{const}\ std::string\&\ nazwisko)\ :\ imie(imie),\ nazwisko(nazwisko)\{}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classosoba_aebb23923369953c667cf6fdcedb430fc}{inicjaly}}()\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Imie:\ "{}}\ <<\ imie\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Nazwisko:\ "{}}\ <<\ nazwisko\ <<\ std::endl;}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::string\ \mbox{\hyperlink{classosoba_a43638025d2cfa70275caf1403f84d858}{imiee}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ imie;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ std::string\ \mbox{\hyperlink{classosoba_ac012a5b42f7c458898ffd6356dd8dfeb}{nazwiskoo}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nazwisko;}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classosoba}{\string~osoba}}()\ \{\};}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{class\ }uczen\ :\ \textcolor{keyword}{public}\ osoba\{}
+\DoxyCodeLine{00128\ \ \ \ \ std::string\ numer\_gr;}
+\DoxyCodeLine{00129\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00130\ \ \ \ \ uczen(\textcolor{keyword}{const}\ std::string\ imie,\ \textcolor{keyword}{const}\ std::string\ nazwisko,\ \textcolor{keyword}{const}\ std::string\ numer\_gr)\ :\ osoba(imie,\ nazwisko),\ numer\_gr(numer\_gr)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classuczen_a16cff0222d6d3ddb0261b918aa4af094}{pokaz\_dane}}()\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classosoba_aebb23923369953c667cf6fdcedb430fc}{osoba::inicjaly}}();}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Grupa\ dziekanska:\ "{}}<<numer\_gr\ <<\ std::endl;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classuczen_ad7cf38747ffbf689b813e7c04df18939}{zwroc\_dane}}(std::string\&\ i,\ std::string\&\ n)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classosoba_a43638025d2cfa70275caf1403f84d858}{osoba::imiee}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ n\ =\ \mbox{\hyperlink{classosoba_ac012a5b42f7c458898ffd6356dd8dfeb}{osoba::nazwiskoo}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ std::string\ \mbox{\hyperlink{classuczen_a29ffdceabe1037de39057cd44f1f318a}{getNumer\_gr}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numer\_gr;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{classuczen}{\string~uczen}}()\ \{\};}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{class\ }nauczyciel\ :\ \textcolor{keyword}{public}\ osoba\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ std::string\ przedmiot\_prowadzony;}
+\DoxyCodeLine{00157\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00158\ \ \ \ \ nauczyciel()\ \{\}}
+\DoxyCodeLine{00159\ \ \ \ \ nauczyciel(\textcolor{keyword}{const}\ std::string\ imie,\ \textcolor{keyword}{const}\ std::string\ nazwisko,\ \textcolor{keyword}{const}\ std::string\ przedmiot\_prowadzony)\ :\ osoba(imie,\ nazwisko),\ przedmiot\_prowadzony(przedmiot\_prowadzony)\{}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnauczyciel_a1132144a2741b7847e2761d7d6ff4e42}{pokaz\_dane}}()\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classosoba_aebb23923369953c667cf6fdcedb430fc}{osoba::inicjaly}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Przedmiot\ prowadzony:\ "{}}\ <<\ przedmiot\_prowadzony\ <<\ std::endl;}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnauczyciel_abedd7e8a9b001030d3ed16ac3d97d0df}{zwroc\_dane}}(std::string\&\ i,\ std::string\&\ n)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classosoba_a43638025d2cfa70275caf1403f84d858}{osoba::imiee}}();}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ n\ =\ \mbox{\hyperlink{classosoba_ac012a5b42f7c458898ffd6356dd8dfeb}{osoba::nazwiskoo}}();}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ std::string\ \mbox{\hyperlink{classnauczyciel_a337e85bfff2d79541ffc0fe3a5e71a66}{getPrzedmiot\_prowadzony}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ przedmiot\_prowadzony;}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{classnauczyciel}{\string~nauczyciel}}()\ \{\};}
+\DoxyCodeLine{00178\ \};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{class\ }sala\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ std::string\ typ;\ \textcolor{comment}{//wykladowa,\ laboratoiryjna,\ komputerowa,\ ogolna...}}
+\DoxyCodeLine{00185\ \ \ \ \ std::string\ numer;}
+\DoxyCodeLine{00186\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00187\ \ \ \ \ sala()\ \{\}}
+\DoxyCodeLine{00188\ \ \ \ \ sala(std::string\ typ,\ std::string\ numer)\ :\ typ(typ),\ numer(numer)\ \{}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsala_a6d81d9a4fe370bb4f3ca0dc9000a2732}{pokaz\_dane}}()\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Numer\ sali:\ "{}}\ <<\ numer\ <<\ std::endl;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Typ\ sali:\ "{}}\ <<\ typ\ <<\ std::endl;}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsala_ad38a5b1da38f11d76ab54f3e60275b32}{pokaz\_dane\_2}}()\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Numer\ sali:\ "{}}\ <<\ numer\ <<\ std::endl;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Typ\ sali:\ "{}}\ <<\ typ\ <<\ std::endl;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsala_ad5d4973cd3352352d8a1e87d75b94d49}{zwroc\_dane\_s}}(std::string\&\ s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ s\ =\ numer;}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ std::string\ \mbox{\hyperlink{classsala_ad15fd60c0559f1887a9210b4460cea0e}{getNumer}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numer;}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ std::string\ \mbox{\hyperlink{classsala_ae14b4cf4578810b7e75673117fd4b925}{getTyp}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typ;}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classsala}{\string~sala}}()\ \{\};}
+\DoxyCodeLine{00217\ \};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{class\ }lekcja\ \{}
+\DoxyCodeLine{00223\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00224\ \ \ \ \ std::string\ przedmiot,\ typ;}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{int}\ parzystosc;\ \textcolor{comment}{//0\ nie\ wazne,\ 1\ parzysty\ dzien,\ 2\ nieparzysty}}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{classsala}{sala}}*\ klasa;}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{classnauczyciel}{nauczyciel}}*\ prowadzacy;}
+\DoxyCodeLine{00228\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00229\ \ \ \ \ lekcja()\ \{\}}
+\DoxyCodeLine{00230\ \ \ \ \ lekcja(std::string\ przedmiot,\ std::string\ typ,\ \textcolor{keywordtype}{int}\ parzystosc,\ \mbox{\hyperlink{classsala}{sala}}*\ nr,\ \mbox{\hyperlink{classnauczyciel}{nauczyciel}}*\ n)\ :\ przedmiot(przedmiot),\ typ(typ),\ parzystosc(parzystosc),\ prowadzacy(n),\ klasa(nr)\ \{}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlekcja_af9aeb19ccd7195b39046bd78f89ae0c0}{pokaz\_dane}}()\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ std::cout\ <<\ przedmiot\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Typ:\ "{}}\ <<\ typ\ <<\ std::endl;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parzystosc\ ==\ 0)\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Co\ tydzien"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (parzystosc\ ==\ 1)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tylko\ parzyste\ tygodnie"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (parzystosc\ ==\ 2)\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tylko\ nieparzyste\ tygodnie"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Prowadzacy:\ "{}};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ prowadzacy-\/>pokaz\_dane();}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ klasa-\/>pokaz\_dane();}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00251\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlekcja_a99fc5d86c0df4828fd2968c6e189c93d}{zwroc\_dane\_p}}(std::string\&\ p)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ p\ =\ przedmiot;}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ std::string\ \mbox{\hyperlink{classlekcja_ab1222daf7b2e3e4abc2fec720cc69663}{getPrzedmiot}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ przedmiot;}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ std::string\ \mbox{\hyperlink{classlekcja_abd54c7688e26476ad5d4d48c250d7963}{getTyp}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typ;}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlekcja_a351c772770e13afd6000e69ce212f12b}{getParzystosc}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parzystosc;}
+\DoxyCodeLine{00267\ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{classnauczyciel}{nauczyciel}}*\ \mbox{\hyperlink{classlekcja_a9ec67699436244f9055419b7b51cab83}{getNauczyciel}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prowadzacy;}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{classsala}{sala}}*\ \mbox{\hyperlink{classlekcja_abf7d35fef9871f4fb90fea9a261a4fad}{getSala}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ klasa;}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{classlekcja}{\string~lekcja}}()\ \{\};}
+\DoxyCodeLine{00278\ \};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00283\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classplan_a266f45990dd94064d40cb8e5722120e6}{plan}}\ :\ \textcolor{keyword}{protected}\ nauczyciel,\ \textcolor{keyword}{protected}\ sala\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{int}\ w\ =\ 57;}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ 16;}
+\DoxyCodeLine{00286\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00287\ \ \ \ \ std::string\ tabela[57][16];}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{classplan_a266f45990dd94064d40cb8e5722120e6}{plan}}()\ \{\ \textcolor{comment}{//tworzy\ szkielet\ planu}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ tabela[0][0]\ =\ \textcolor{stringliteral}{"{}Godz."{}};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ tabela[0][2]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ Poniedzialek"{}};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ tabela[0][4]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ Wtorek"{}};}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ tabela[0][6]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ Sroda"{}};}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ tabela[0][8]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ Czwartek"{}};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ tabela[0][10]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ Piatek"{}};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ tabela[0][12]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ Sobota"{}};}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ tabela[0][14]\ =\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ Niedziela"{}};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{comment}{//myslniki\ poziome}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ std::stringstream\ myslniki,\ myslinik0;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ myslniki\ <<\ std::setw(25)\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}-\/"{}};\ \textcolor{comment}{//to\ dla\ wierszy}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ myslinik0\ <<\ std::setw(6)\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}-\/"{}};\ \textcolor{comment}{//to\ dla\ godziny}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ w;\ j\ +=\ 5)\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ tabela[j][0]\ =\ myslinik0.str();}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ k;\ i++)\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ \%\ 2\ ==\ 1)\ \{}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tabela[j][i]\ =\ myslniki.str();}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ myslniki\ pionowe}}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ k;\ j\ +=\ 2)\ \{\ \textcolor{comment}{//to\ dla\ |}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ w;\ i++)\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 1)\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tabela[1][j]\ =\ \textcolor{stringliteral}{"{}-\/"{}};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tabela[i][j]\ =\ \textcolor{stringliteral}{"{}|"{}};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{comment}{//zajmuje\ sie\ godzinami}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h\ =\ 8;}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\ =\ 00;}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <=\ 55;\ i++)\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ ==\ 60)\ \{\ \textcolor{comment}{//\ jak\ jest\ 60\ minuta\ to\ zwieksza\ godzine\ o\ 1}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\ =\ 00;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ oss;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ std::setw(2)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ h\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ std::setw(2)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ m;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ ==\ 00)\ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tabela[i][0]\ =\ oss.str();}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//tu\ s¹\ minuty(co\ 15)\ mozna\ zakomentowac}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tabela[i][0]\ =\ oss.str();}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ m\ +=\ 15;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplan_a37d5c71757eddbdfca55774215bf3547}{pokaz\_plan}}()\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Plan\ lekcji:"{}}\ <<\ std::endl\ <<\ std::endl;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ w;\ x++)\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ k;\ y++)\ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ ==\ 0)\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(6)\ <<\ std::left\ <<\ tabela[x][y];\ \textcolor{comment}{//wyswietla\ godziny}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (y\ \%\ 2\ ==\ 1)\ \{\ \textcolor{comment}{//wyswietla\ |}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ tabela[x][y];}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ ==\ 15)\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(25)\ <<\ std::left\ <<\ tabela[x][y];\ \textcolor{comment}{//wyswietla\ komorki\ ogolnie}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(\textcolor{keywordtype}{int}\&\ x)\ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((x\ -\/\ 1)\ \%\ 5\ ==\ 0)\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplan_a1cf67f21da5985f4d7059dddf728e331}{dodaj\_do\_planu}}(\textcolor{keywordtype}{int}\ h,\ \textcolor{keywordtype}{int}\ m,\ std::string\ dzien,\ std::string\ przedmiot,\ std::string\ typ,\ \textcolor{keywordtype}{int}\ ht,\ \textcolor{keywordtype}{int}\ mt,\ \mbox{\hyperlink{classlista}{lista<lekcja*>}}\&\ lekcje,\ \textcolor{keywordtype}{int}\ nr\_gr,\ \textcolor{keywordtype}{bool}\ laduj)\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y,\ i\_minuty;}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ std::stringstream\ fale;\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ std::string\ nr\_sali,\ imie,\ nazwisko;}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ fale\ <<\ std::setw(25)\ <<\ std::setfill(\textcolor{charliteral}{'\string~'})\ <<\ \textcolor{stringliteral}{"{}\string~"{}};}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}poniedzialek"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}pon"{}})\ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 2;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}wtorek"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}wt"{}})\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 4;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}sroda"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}sr"{}})\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 6;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}czwartek"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}czw"{}})\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 8;}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}piatek"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}pt"{}})\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 10;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}sobota"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}sob"{}})\ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 12;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dzien\ ==\ \textcolor{stringliteral}{"{}niedziela"{}}\ ||\ dzien\ ==\ \textcolor{stringliteral}{"{}nd"{}})\ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 14;}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Podano\ zly\ dzien"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ std::exit(1);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ <\ 8\ ||\ h\ >\ 18\ ||\ (ht\ ==\ 0\ \&\&\ mt\ !=\ 45))\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Podano\ zla\ godzine"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ std::exit(1);}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ ==\ 00)\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ i\_minuty\ =\ 0;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\ ==\ 15)\ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ i\_minuty\ =\ 1;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\ ==\ 30)\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ i\_minuty\ =\ 2;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\ ==\ 45)\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ i\_minuty\ =\ 3;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Podano\ zla\ minute"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ std::exit(1);}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlekcja}{lekcja}}*\ zgodna\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_node}{Node<lekcja*>}}*\ curr\ =\ lekcje.getHead();\ curr\ !=\ \textcolor{keyword}{nullptr};\ curr\ =\ curr-\/>next)\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>value-\/>getPrzedmiot()\ ==\ przedmiot\ \&\&\ curr-\/>value-\/>getTyp()\ ==\ typ)\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zgodna\ =\ curr-\/>value;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zgodna\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Nie\ znaleziono\ lekcji\ o\ nazwie:\ "{}}\ <<\ przedmiot\ <<\ std::endl;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ nauczyciel*\ prow\ =\ zgodna-\/>\mbox{\hyperlink{classlekcja_a9ec67699436244f9055419b7b51cab83}{getNauczyciel}}();}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ sala*\ sala\_ss\ =\ zgodna-\/>\mbox{\hyperlink{classlekcja_abf7d35fef9871f4fb90fea9a261a4fad}{getSala}}();}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ prow-\/>\mbox{\hyperlink{classnauczyciel_abedd7e8a9b001030d3ed16ac3d97d0df}{zwroc\_dane}}(imie,\ nazwisko);}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ sala\_ss-\/>\mbox{\hyperlink{classsala_ad5d4973cd3352352d8a1e87d75b94d49}{zwroc\_dane\_s}}(nr\_sali);}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ x\ =\ 2\ +\ 5\ *\ (-\/8\ +\ h)\ +\ i\_minuty;\ \textcolor{comment}{//gorna\ granica\ lekcji}}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ fale.str();}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{comment}{//nazwa\ lekcji}}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rozmiar\_p\ =\ przedmiot.size();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x);}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rozmiar\_p\ <=\ 25)\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ nazwa\_lekcji;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ nazwa\_lekcji\ <<\ std::setw(25)\ <<\ std::left\ <<\ przedmiot;}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ nazwa\_lekcji.str();}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ pierwsze\_25\ =\ przedmiot.substr(0,\ 25);}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ drugie\_25\ =\ przedmiot.substr(25,\ std::min(25,\ rozmiar\_p\ -\/\ 25));}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ linia1,\ linia2;}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ linia1\ <<\ std::setw(25)\ <<\ pierwsze\_25;}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ linia2\ <<\ std::setw(25)\ <<\ std::left\ <<\ drugie\_25;}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ linia1.str();}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ linia2.str();}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{comment}{//typ\ lekcji,\ sala}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ std::stringstream\ typ\_ss;}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ typ\_ss\ <<\ typ\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ Sala:\ "{}}\ <<\ nr\_sali\ <<\ std::setw(12);}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ typ\_ss.str();}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{comment}{//nauczyciel}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x);}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ std::stringstream\ imie\_ss,\ nazwisko\_ss;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ imie\_ss\ <<\ imie\ <<\ std::setw(25);}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ imie\_ss.str();}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x);}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ nazwisko\_ss\ <<\ nazwisko\ <<\ std::setw(25);}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ tabela[x][y]\ =\ nazwisko\_ss.str();}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ x\ =\ 2\ +\ 5\ *\ (-\/8\ +\ h)\ +\ i\_minuty;}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \textcolor{comment}{//dolna\ granica\ lekcji}}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ile\ =\ ht\ *\ 4\ +\ mt\ /\ 15;}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\_specjal\ =\ x;}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ przesuniecie\ =\ 0;}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ile;\ ++i)\ \{\ \textcolor{comment}{//\ to\ robi\ ze\ prawidolo\ sie\ wyswietla\ linia\ konca\ lekcji}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ test\ =\ x\_specjal\ +\ i\ +\ przesuniecie;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((test\ -\/\ 1)\ \%\ 5\ ==\ 0)\ \{}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ przesuniecie++;}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ x\_specjal\ =\ x\ +\ ile\ +\ przesuniecie;}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classplan_a08c504fbf058e218be08de49f80b6851}{czy\_sa\_myslniki}}(x\_specjal);}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ tabela[x\_specjal][y]\ =\ fale.str();}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (laduj\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ zapis\_planu(\textcolor{stringliteral}{"{}zapis\_planu.txt"{}},\ std::ios::app);\ \textcolor{comment}{//dopisuje\ na\ koniec}}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zapis\_planu)\ \{}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Dzien:\ "{}}\ <<\ dzien\ <<\ std::endl;}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Godzina\ rozpoczecia:\ "{}}\ <<\ h\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m\ <<\ std::endl;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Trwa:\ "{}}\ <<\ ht\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ mt\ <<\ std::endl;}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Przedmiot:\ "{}}\ <<\ przedmiot\ <<\ std::endl;}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Typ:\ "{}}\ <<\ typ\ <<\ std::endl;}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}Nr\ grupy:\ "{}}\ <<\ nr\_gr\ <<\ std::endl;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zapis\_planu\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \ \ \ \ \}}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \ \ \ \ \mbox{\hyperlink{classplan}{\string~plan}}()\ \{\};}
+\DoxyCodeLine{00541\ \};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ std::ostream\&\ \mbox{\hyperlink{klasy_8h_a384603218c1eea85572d1ab29e28ad20}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classuczen}{uczen}}*\ u);}
+\DoxyCodeLine{00544\ std::ostream\&\ \mbox{\hyperlink{klasy_8h_a384603218c1eea85572d1ab29e28ad20}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classnauczyciel}{nauczyciel}}*\ n);}
+\DoxyCodeLine{00545\ std::ostream\&\ \mbox{\hyperlink{klasy_8h_a384603218c1eea85572d1ab29e28ad20}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsala}{sala}}*\ s);}
+\DoxyCodeLine{00546\ std::ostream\&\ \mbox{\hyperlink{klasy_8h_a384603218c1eea85572d1ab29e28ad20}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlekcja}{lekcja}}*\ l);}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00551\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstruktura__planow}{struktura\_planow}}\ \{}
+\DoxyCodeLine{00552\ \ \ \ \ \mbox{\hyperlink{classplan}{plan}}\ p1,\ p2,\ p3,\ p4,\ p5,\ p6;}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \ \ \ \ \mbox{\hyperlink{classplan}{plan}}*\ get\_plan(\textcolor{keywordtype}{int}\ numer\_grupy)\ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (numer\_grupy)\ \{}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \textcolor{keywordflow}{return}\ \&p1;}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{keywordflow}{return}\ \&p2;}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \textcolor{keywordflow}{return}\ \&p3;}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \textcolor{keywordflow}{return}\ \&p4;}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ \textcolor{keywordflow}{return}\ \&p5;}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \textcolor{keywordflow}{return}\ \&p6;}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00564\ \ \ \ \ \}}
+\DoxyCodeLine{00565\ \};}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

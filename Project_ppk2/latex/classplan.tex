@@ -1,0 +1,119 @@
+\doxysection{plan Class Reference}
+\hypertarget{classplan}{}\label{classplan}\index{plan@{plan}}
+
+
+Klasa odpowiedzialna za reprezentacjê planu lekcji jako tabeli.  
+
+
+
+
+{\ttfamily \#include $<$klasy.\+h$>$}
+
+Inheritance diagram for plan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classplan}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classplan_a266f45990dd94064d40cb8e5722120e6}\label{classplan_a266f45990dd94064d40cb8e5722120e6} 
+{\bfseries plan} ()
+\begin{DoxyCompactList}\small\item\em Inicjalizuje szkielet planu. \end{DoxyCompactList}\item 
+\Hypertarget{classplan_a37d5c71757eddbdfca55774215bf3547}\label{classplan_a37d5c71757eddbdfca55774215bf3547} 
+void {\bfseries pokaz\+\_\+plan} ()
+\begin{DoxyCompactList}\small\item\em Wyswietla plan. \end{DoxyCompactList}\item 
+\Hypertarget{classplan_a08c504fbf058e218be08de49f80b6851}\label{classplan_a08c504fbf058e218be08de49f80b6851} 
+void {\bfseries czy\+\_\+sa\+\_\+myslniki} (int \&x)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy na linijce x nie ma myslnikow, by nic nie dac na szkielet planu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classplan_a1cf67f21da5985f4d7059dddf728e331}{dodaj\+\_\+do\+\_\+planu}} (int h, int m, std\+::string dzien, std\+::string przedmiot, std\+::string typ, int ht, int mt, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&lekcje, int nr\+\_\+gr, bool laduj)
+\begin{DoxyCompactList}\small\item\em Dodaje lekcjê do planu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classplan_a8a028be72261816a1fd1304e4a3f75ab}\label{classplan_a8a028be72261816a1fd1304e4a3f75ab} 
+std\+::string {\bfseries tabela} \mbox{[}57\mbox{]}\mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classnauczyciel}{nauczyciel}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries nauczyciel} (const std\+::string imie, const std\+::string nazwisko, const std\+::string przedmiot\+\_\+prowadzony)
+\item 
+void {\bfseries pokaz\+\_\+dane} ()
+\begin{DoxyCompactList}\small\item\em Zwraca dane nauczyciela do cout. \end{DoxyCompactList}\item 
+void {\bfseries zwroc\+\_\+dane} (std\+::string \&i, std\+::string \&n) const
+\begin{DoxyCompactList}\small\item\em Zwraca dane nauczyciela przez referencje. \end{DoxyCompactList}\item 
+std\+::string {\bfseries get\+Przedmiot\+\_\+prowadzony} () const
+\begin{DoxyCompactList}\small\item\em Zwraca przedmiot prowadzony nauczyciela. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classosoba}{osoba}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries osoba} (const std\+::string \&imie, const std\+::string \&nazwisko)
+\item 
+void {\bfseries inicjaly} ()
+\begin{DoxyCompactList}\small\item\em Zwraca inicjaly osoby. \end{DoxyCompactList}\item 
+std\+::string {\bfseries imiee} () const
+\begin{DoxyCompactList}\small\item\em Zwraca imie osoby. \end{DoxyCompactList}\item 
+std\+::string {\bfseries nazwiskoo} () const
+\begin{DoxyCompactList}\small\item\em Zwraca nazwisko osoby. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classsala}{sala}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries sala} (std\+::string typ, std\+::string numer)
+\item 
+void {\bfseries pokaz\+\_\+dane} ()
+\begin{DoxyCompactList}\small\item\em Zwraca dane sali do cout. \end{DoxyCompactList}\item 
+void {\bfseries pokaz\+\_\+dane\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Zwraca dane sali do cout z endl na koncu. \end{DoxyCompactList}\item 
+void {\bfseries zwroc\+\_\+dane\+\_\+s} (std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Zwraca nummer sali przez referencje. \end{DoxyCompactList}\item 
+std\+::string {\bfseries get\+Numer} () const
+\begin{DoxyCompactList}\small\item\em Zwraca numer sali. \end{DoxyCompactList}\item 
+std\+::string {\bfseries get\+Typ} () const
+\begin{DoxyCompactList}\small\item\em Zwraca typ sali. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa odpowiedzialna za reprezentacjê planu lekcji jako tabeli. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classplan_a1cf67f21da5985f4d7059dddf728e331}\index{plan@{plan}!dodaj\_do\_planu@{dodaj\_do\_planu}}
+\index{dodaj\_do\_planu@{dodaj\_do\_planu}!plan@{plan}}
+\doxysubsubsection{\texorpdfstring{dodaj\_do\_planu()}{dodaj\_do\_planu()}}
+{\footnotesize\ttfamily \label{classplan_a1cf67f21da5985f4d7059dddf728e331} 
+void plan\+::dodaj\+\_\+do\+\_\+planu (\begin{DoxyParamCaption}\item[{int}]{h}{, }\item[{int}]{m}{, }\item[{std\+::string}]{dzien}{, }\item[{std\+::string}]{przedmiot}{, }\item[{std\+::string}]{typ}{, }\item[{int}]{ht}{, }\item[{int}]{mt}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&}]{lekcje}{, }\item[{int}]{nr\+\_\+gr}{, }\item[{bool}]{laduj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dodaje lekcjê do planu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Godzina rozpoczêcia (np. 8). \\
+\hline
+{\em m} & Minuta rozpoczêcia (np. 15). \\
+\hline
+{\em dzien} & Dzieñ tygodnia. \\
+\hline
+{\em przedmiot} & Nazwa przedmiotu. \\
+\hline
+{\em typ} & Typ zajêæ (CW, WYK, LAB...). \\
+\hline
+{\em ht} & Liczba godzin trwania. \\
+\hline
+{\em mt} & Liczba minut trwania. \\
+\hline
+{\em lekcje} & Lista dostêpnych lekcji do wyboru. \\
+\hline
+{\em nr\+\_\+gr} & Numer grupy. \\
+\hline
+{\em laduj} & czy nalezy ja ladowac do pliku zapis\+\_\+planu. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project\+\_\+ppk2/\mbox{\hyperlink{klasy_8h}{klasy.\+h}}\end{DoxyCompactItemize}

@@ -12,7 +12,7 @@
  * @param sale Do tej listy sa wczytywane sale
  * @author Dyba
  *	*/
-void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale);
+void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale, struktura_planow& plany);
 
 /** Usuwa listy
  * @param nauczyciele Usuwa liste nauczyciele

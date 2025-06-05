@@ -1,18 +1,90 @@
-Numer: 3
+Numer: 7
 Typ: ogolna
 ---------------------------
-Numer: A
-Typ: aula
+Numer: 12
+Typ: ogolna
+---------------------------
+Numer: 10
+Typ: ogolna
+---------------------------
+Numer: 8
+Typ: ogolna
 ---------------------------
 Numer: B
 Typ: aula
 ---------------------------
+Numer: 18
+Typ: ogolna
+---------------------------
+Numer: 24
+Typ: ogolna
+---------------------------
+Numer: 16
+Typ: ogolna
+---------------------------
+Numer: 5
+Typ: ogolna
+---------------------------
+Numer: 14
+Typ: ogolna
+---------------------------
+Numer: 13
+Typ: ogolna
+---------------------------
+Numer: 17
+Typ: ogolna
+---------------------------
 Numer: C
 Typ: aula
 ---------------------------
-Numer: a
+Numer: 23
+Typ: ogolna
+---------------------------
+Numer: L2
 Typ: laboratoryjna
 ---------------------------
+Numer: 19
+Typ: ogolna
+---------------------------
+Numer: 4
+Typ: ogolna
+---------------------------
+Numer: 15
+Typ: ogolna
+---------------------------
+Numer: 11
+Typ: ogolna
+---------------------------
+Numer: 6
+Typ: ogolna
+---------------------------
+Numer: L3
+Typ: laboratoryjna
+---------------------------
+Numer: A
+Typ: aula
+---------------------------
+Numer: 21
+Typ: ogolna
+---------------------------
+Numer: L1
+Typ: laboratoryjna
+---------------------------
+Numer: 9
+Typ: ogolna
+---------------------------
+Numer: 1
+Typ: ogolna
+---------------------------
 Numer: 2
-Typ: komputerowa
+Typ: ogolna
+---------------------------
+Numer: 22
+Typ: ogolna
+---------------------------
+Numer: 3
+Typ: ogolna
+---------------------------
+Numer: 20
+Typ: ogolna
 ---------------------------

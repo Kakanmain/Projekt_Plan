@@ -7,7 +7,9 @@
 
 #include "klasy.h"
 
-void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale) {
+/** @brief Wczytuje nauczycieli, uczniów, lekcje, sale i plan.
+ */
+void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale, struktura_planow& plany) {
 	// SALE
 	std::ifstream laduj_sale("zapis_sal.txt");
 	if (laduj_sale) {
@@ -83,7 +85,7 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 				int rozmiar = prowadzacy.size();
 				int licz = 0;
 				for (int i = 0; i < rozmiar; i++) {
-					if (prowadzacy[i] == ' ') { //tu jest problem
+					if (prowadzacy[i] == ' ') { 
 						licz++;
 					}
 					else if(licz == 0){
@@ -143,8 +145,75 @@ void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, list
 		}
 	}
 	laduj_uczniow.close();
+
+	// PLAN
+	std::ifstream laduj_plan("zapis_planu.txt");
+	if (laduj_plan) {
+		std::string linia, dzien, przedmiot, typ, godzina_r, trwa, nr;
+		int h, m, ht, mt, nr_gr = 0;
+
+		while (std::getline(laduj_plan, linia)) {
+			std::stringstream godz_ss, min_ss, trwa_hs, trwa_ms, nr_ss;
+			if (linia.find("Dzien: ") == 0) {
+				dzien = linia.substr(7);
+			}
+			else if (linia.find("Godzina rozpoczecia: ") == 0) {
+				godzina_r = linia.substr(21);
+				int rozmiar = godzina_r.size();
+				int licz = 0;
+				for (int i = 0; i < rozmiar; i++) {
+					if (godzina_r[i] == ' ') {
+						licz++;
+					}
+					else if (licz == 0) {
+						godz_ss << godzina_r[i];
+					}
+					else {
+						min_ss << godzina_r[i];
+					}
+				}
+				godz_ss >> h;
+				min_ss >> m;
+			}
+			else if (linia.find("Trwa: ") == 0) {
+				trwa = linia.substr(6);
+				int rozmiar = trwa.size();
+				int licz = 0;
+				for (int i = 0; i < rozmiar; i++) {
+					if (trwa[i] == ' ') {
+						licz++;
+					}
+					else if (licz == 0) {
+						trwa_hs << trwa[i];
+					}
+					else {
+						trwa_ms << trwa[i];
+					}
+				}
+				trwa_hs >> ht;
+				trwa_ms >> mt;
+			}
+			else if (linia.find("Przedmiot: ") == 0) {
+				przedmiot = linia.substr(11);
+			}
+			else if (linia.find("Typ: ") == 0) {
+				typ = linia.substr(5);
+			}
+			else if (linia.find("Nr grupy: ") == 0) {
+				nr = linia.substr(10);
+				nr_ss << nr;
+				nr_ss >> nr_gr;
+			}
+			else if (linia.find("-") == 0) {
+				plany.get_plan(nr_gr)->dodaj_do_planu(h, m, dzien, przedmiot, typ, ht, mt, lekcje, nr_gr, true);
+			}
+		}
+	}
+	laduj_plan.close();
 }
 
+/** @brief Usuwa dynamicznie zaalokowane dane z list.
+ */
 void usun_listy(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale) {
 	for (Node<nauczyciel*>* curr = nauczyciele.getHead(); curr != nullptr; curr = curr->next) {
 		delete curr->value;
@@ -163,6 +232,11 @@ void usun_listy(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista
 	}
 }
 
+/** @brief Przeci¹¿ony operator << dla klasy uczen.
+ *  @param os Strumieñ wyjœciowy.
+ *  @param u WskaŸnik na ucznia.
+ *  @return Referencja do strumienia wyjœciowego.
+ */
 std::ostream& operator<<(std::ostream& os, const uczen* u) { // uczen
 	if (!u) return os;
 
@@ -175,6 +249,11 @@ std::ostream& operator<<(std::ostream& os, const uczen* u) { // uczen
 	return os;
 }
 
+/** @brief Przeci¹¿ony operator << dla klasy nauczyciel.
+ *  @param os Strumieñ wyjœciowy.
+ *  @param u WskaŸnik na nauczyciela.
+ *  @return Referencja do strumienia wyjœciowego.
+ */
 std::ostream& operator<<(std::ostream& os, const nauczyciel* n) { // nauczyciel
 	if (!n) return os;
 
@@ -187,6 +266,11 @@ std::ostream& operator<<(std::ostream& os, const nauczyciel* n) { // nauczyciel
 	return os;
 }
 
+/** @brief Przeci¹¿ony operator << dla klasy sala.
+ *  @param os Strumieñ wyjœciowy.
+ *  @param u WskaŸnik na sale.
+ *  @return Referencja do strumienia wyjœciowego.
+ */
 std::ostream& operator<<(std::ostream& os, const sala* s) { // sala
 	if (!s) return os;
 
@@ -196,6 +280,11 @@ std::ostream& operator<<(std::ostream& os, const sala* s) { // sala
 	return os;
 }
 
+/** @brief Przeci¹¿ony operator << dla klasy lekcja.
+ *  @param os Strumieñ wyjœciowy.
+ *  @param u WskaŸnik na lekcje.
+ *  @return Referencja do strumienia wyjœciowego.
+ */
 std::ostream& operator<<(std::ostream& os, const lekcja* l) { // lekcja
 	if (!l) return os;
 

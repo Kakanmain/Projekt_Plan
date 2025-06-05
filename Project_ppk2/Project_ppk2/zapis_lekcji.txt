@@ -2,7 +2,7 @@ Przedmiot: Fizyka
 Typ: CW
 Parzystosc: Co tydzien
 Prowadzacy: Justyna Juszczyk-Synowiec
-Sala: 3
+Sala: 7
 ---------------------------
 Przedmiot: Fizyka
 Typ: WYK
@@ -14,7 +14,7 @@ Przedmiot: Elektronika i miernictwo
 Typ: CW
 Parzystosc: Co tydzien
 Prowadzacy: Jacek Checinski
-Sala: 3
+Sala: 12
 ---------------------------
 Przedmiot: Elektronika i miernictwo
 Typ: WYK
@@ -26,19 +26,19 @@ Przedmiot: Analiza matematyczna i algebra liniowa
 Typ: CW
 Parzystosc: Co tydzien
 Prowadzacy: Ewa Lobos
-Sala: 3
+Sala: 10
 ---------------------------
 Przedmiot: Analiza matematyczna i algebra liniowa
 Typ: WYK
 Parzystosc: Co tydzien
 Prowadzacy: Bartlomiej Pawlik
-Sala: A
+Sala: C
 ---------------------------
 Przedmiot: Podstawy elektrotechniki
 Typ: CW
 Parzystosc: Parzyste tygodnie
 Prowadzacy: Jan Machniewski
-Sala: 3
+Sala: 8
 ---------------------------
 Przedmiot: Podstawy elektrotechniki
 Typ: WYK
@@ -50,25 +50,25 @@ Przedmiot: Algorytmy i struktury danych
 Typ: CW
 Parzystosc: Parzyste tygodnie
 Prowadzacy: Agnieszka Danek
-Sala: 3
+Sala: 18
 ---------------------------
 Przedmiot: Algorytmy i struktury danych
 Typ: WYK
 Parzystosc: Parzyste tygodnie
 Prowadzacy: Zbigniew Czech
-Sala: A
+Sala: B
 ---------------------------
 Przedmiot: Podstawy informatyki
 Typ: CW
 Parzystosc: Parzyste tygodnie
 Prowadzacy: Robert Tutajewicz
-Sala: 3
+Sala: 24
 ---------------------------
 Przedmiot: Podstawy informatyki
 Typ: WYK
 Parzystosc: Nieparzyste tygodnie
 Prowadzacy: Robert Tutajewicz
-Sala: A
+Sala: C
 ---------------------------
 Przedmiot: Programowanie komputerow
 Typ: WYK
@@ -80,29 +80,29 @@ Przedmiot: Programowanie komputerow
 Typ: LAB
 Parzystosc: Nieparzyste tygodnie
 Prowadzacy: Grzegorz Kwiatkowski
-Sala: 2
+Sala: L2
 ---------------------------
 Przedmiot: Teoria ukladow cyfrowych
 Typ: CW
 Parzystosc: Nieparzyste tygodnie
 Prowadzacy: Tomasz Rudnicki
-Sala: 3
+Sala: 16
 ---------------------------
 Przedmiot: Teoria ukladow cyfrowych
 Typ: WYK
 Parzystosc: Co tydzien
 Prowadzacy: Adam Opara
-Sala: A
+Sala: B
 ---------------------------
 Przedmiot: Wychowanie fizyczne
 Typ: CW
 Parzystosc: Co tydzien
 Prowadzacy: Piotr Zemla
-Sala: 3
+Sala: 5
 ---------------------------
 Przedmiot: Jezyk angielski
 Typ: LEKT
 Parzystosc: Co tydzien
 Prowadzacy: Beata Badowska-Ekiert
-Sala: 3
+Sala: 14
 ---------------------------

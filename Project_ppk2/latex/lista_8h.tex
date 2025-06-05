@@ -1,0 +1,61 @@
+\doxysection{Project\+\_\+ppk2/lista.h File Reference}
+\hypertarget{lista_8h}{}\label{lista_8h}\index{Project\_ppk2/lista.h@{Project\_ppk2/lista.h}}
+{\ttfamily \#include "{}klasy.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lista_8h_ada5eae32e1b0c3a73d0355e6c912590e}{inicjalizuj}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classnauczyciel}{nauczyciel}} \texorpdfstring{$\ast$}{*} $>$ \&nauczyciele, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classuczen}{uczen}} \texorpdfstring{$\ast$}{*} $>$ \&uczniowie, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&lekcje, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classsala}{sala}} \texorpdfstring{$\ast$}{*} $>$ \&sale, \mbox{\hyperlink{structstruktura__planow}{struktura\+\_\+planow}} \&plany)
+\begin{DoxyCompactList}\small\item\em Wczytuje nauczycieli, uczniów, lekcje, sale i plan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_8h_ac744fbc16ef793909adbd6e7e61b24a6}{usun\+\_\+listy}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classnauczyciel}{nauczyciel}} \texorpdfstring{$\ast$}{*} $>$ \&nauczyciele, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classuczen}{uczen}} \texorpdfstring{$\ast$}{*} $>$ \&uczniowie, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&lekcje, \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classsala}{sala}} \texorpdfstring{$\ast$}{*} $>$ \&sale)
+\begin{DoxyCompactList}\small\item\em Usuwa dynamicznie zaalokowane dane z list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lista_8h_ada5eae32e1b0c3a73d0355e6c912590e}\index{lista.h@{lista.h}!inicjalizuj@{inicjalizuj}}
+\index{inicjalizuj@{inicjalizuj}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{inicjalizuj()}{inicjalizuj()}}
+{\footnotesize\ttfamily \label{lista_8h_ada5eae32e1b0c3a73d0355e6c912590e} 
+void inicjalizuj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classnauczyciel}{nauczyciel}} \texorpdfstring{$\ast$}{*} $>$ \&}]{nauczyciele}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classuczen}{uczen}} \texorpdfstring{$\ast$}{*} $>$ \&}]{uczniowie}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&}]{lekcje}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classsala}{sala}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sale}{, }\item[{\mbox{\hyperlink{structstruktura__planow}{struktura\+\_\+planow}} \&}]{plany}{}\end{DoxyParamCaption})}
+
+
+
+Wczytuje nauczycieli, uczniów, lekcje, sale i plan. 
+
+Inicjalizuje dane do list 
+\begin{DoxyParams}{Parameters}
+{\em nauczyciele} & Do tej listy sa wczytywani nauczyciele \\
+\hline
+{\em uczniowie} & Do tej listy sa wczytywani uczniowie \\
+\hline
+{\em lekcje} & Do tej listy sa wczytywane lekcje \\
+\hline
+{\em sale} & Do tej listy sa wczytywane sale \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Dyba 
+\end{DoxyAuthor}
+\Hypertarget{lista_8h_ac744fbc16ef793909adbd6e7e61b24a6}\index{lista.h@{lista.h}!usun\_listy@{usun\_listy}}
+\index{usun\_listy@{usun\_listy}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{usun\_listy()}{usun\_listy()}}
+{\footnotesize\ttfamily \label{lista_8h_ac744fbc16ef793909adbd6e7e61b24a6} 
+void usun\+\_\+listy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classnauczyciel}{nauczyciel}} \texorpdfstring{$\ast$}{*} $>$ \&}]{nauczyciele}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classuczen}{uczen}} \texorpdfstring{$\ast$}{*} $>$ \&}]{uczniowie}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classlekcja}{lekcja}} \texorpdfstring{$\ast$}{*} $>$ \&}]{lekcje}{, }\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{classsala}{sala}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sale}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa dynamicznie zaalokowane dane z list. 
+
+Usuwa listy 
+\begin{DoxyParams}{Parameters}
+{\em nauczyciele} & Usuwa liste nauczyciele \\
+\hline
+{\em uczniowie} & Usuwa liste uczniowie \\
+\hline
+{\em lekcje} & Usuwa liste lekcje \\
+\hline
+{\em sale} & Usuwa liste sale \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Dyba 
+\end{DoxyAuthor}

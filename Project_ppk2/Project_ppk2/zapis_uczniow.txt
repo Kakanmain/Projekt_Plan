@@ -102,3 +102,7 @@ Imie: Baltazar
 Nazwisko: Gabka
 Numer_gr: 5
 ---------------------------
+Imie: Abraham
+Nazwisko: Lincoln
+Nr_grupy: 4
+---------------------------

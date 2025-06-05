@@ -1,0 +1,546 @@
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 1
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 13 45
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Wychowanie fizyczne
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 15 0
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: WYK
+Nr grupy: 1
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 15 0
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: CW
+Nr grupy: 1
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 2
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Wychowanie fizyczne
+Typ: CW
+Nr grupy: 2
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: CW
+Nr grupy: 2
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 12 0
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: WYK
+Nr grupy: 2
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: CW
+Nr grupy: 2
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: CW
+Nr grupy: 2
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Jezyk angielski
+Typ: LEKT
+Nr grupy: 2
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: CW
+Nr grupy: 2
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: CW
+Nr grupy: 3
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Jezyk angielski
+Typ: LEKT
+Nr grupy: 3
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Wychowanie fizyczne
+Typ: CW
+Nr grupy: 3
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 3
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: WYK
+Nr grupy: 3
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: CW
+Nr grupy: 3
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: CW
+Nr grupy: 3
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: CW
+Nr grupy: 3
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: CW
+Nr grupy: 4
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Jezyk angielski
+Typ: LEKT
+Nr grupy: 4
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: CW
+Nr grupy: 4
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 4
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: CW
+Nr grupy: 4
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 15 30
+Trwa: 1 30
+Przedmiot: Wychowanie fizyczne
+Typ: CW
+Nr grupy: 4
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: WYK
+Nr grupy: 4
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: CW
+Nr grupy: 4
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 5
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: CW
+Nr grupy: 5
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Jezyk angielski
+Typ: LEKT
+Nr grupy: 5
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: CW
+Nr grupy: 5
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: CW
+Nr grupy: 5
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: CW
+Nr grupy: 5
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: CW
+Nr grupy: 5
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 15 0
+Trwa: 1 30
+Przedmiot: Fizyka
+Typ: WYK
+Nr grupy: 5
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy elektrotechniki
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: pon
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: WYK
+Nr grupy: 6
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: wt
+Godzina rozpoczecia: 15 30
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: WYK
+Nr grupy: 6
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Podstawy informatyki
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 13 15
+Trwa: 1 30
+Przedmiot: Algorytmy i struktury danych
+Typ: WYK
+Nr grupy: 6
+---------------------------
+Dzien: sroda
+Godzina rozpoczecia: 15 0
+Trwa: 1 30
+Przedmiot: Jezyk angielski
+Typ: LEKT
+Nr grupy: 6
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 8 0
+Trwa: 1 30
+Przedmiot: Elektronika i miernictwo
+Typ: WYK
+Nr grupy: 6
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Analiza matematyczna i algebra liniowa
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: czw
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: CW
+Nr grupy: 6
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 9 45
+Trwa: 1 30
+Przedmiot: Programowanie komputerow
+Typ: LAB
+Nr grupy: 6
+---------------------------
+Dzien: pt
+Godzina rozpoczecia: 11 30
+Trwa: 1 30
+Przedmiot: Teoria ukladow cyfrowych
+Typ: WYK
+Nr grupy: 6
+---------------------------
