@@ -50,7 +50,7 @@ void alt(std::string& p) {
 		p = "Jezyk angielski";
 	}
 	else {
-		std::cerr << "Zla nazwa przedmiotu!" << std::endl;
+		std::cout << "Zla nazwa przedmiotu!" << std::endl;
 		std::exit(1);
 	}
 }
@@ -260,7 +260,7 @@ void f_nauczyciel(lista<nauczyciel*>& nauczyciele, struktura_planow& plany, list
 
 			std::ifstream plik("zapis_planu.txt");
 			if (!plik) {
-				std::cerr << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
+				std::cout << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
 				return;
 			}
 
@@ -369,7 +369,7 @@ void f_lekcji(lista<lekcja*>& lekcje) {
 
 			std::ifstream plik("zapis_planu.txt");
 			if (!plik) {
-				std::cerr << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
+				std::cout << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
 				return;
 			}
 
@@ -464,7 +464,7 @@ void f_sala(lista<sala*>& sale, lista<lekcja*>& lekcje) {
 
 			std::ifstream plik("zapis_planu.txt");
 			if (!plik) {
-				std::cerr << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
+				std::cout << "Nie mozna otworzyc zapis_planu.txt" << std::endl;
 				return;
 			}
 

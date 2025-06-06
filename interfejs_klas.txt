@@ -2,27 +2,33 @@ INTERFEJS KLAS – PROJEKT „Plan lekcji”
 
 1. plan
 - Reprezentuje siatkę planu lekcji (tabela dni i godzin).
-- Metody: pokaz_plan()
+- Metody: pokaz_plan(), dodaj_do_planu(), czy_sa_myslniki()
 
 2. osoba (bazowa)
 - Przechowuje imię i nazwisko.
-- Metody: inicjaly()
+- Metody: inicjaly(), imiee(), nazwiskoo()
 
 3. uczen : osoba
 - Dodaje numer grupy dziekańskiej.
-- Metody: pokaz_dane()
+- Metody: pokaz_dane(), zwroc_dane(), getNumer_gr()
 
 4. nauczyciel : osoba
 - Dodaje przedmiot prowadzony.
-- Metody: pokaz_dane()
+- Metody: pokaz_dane(), zwroc_dane(), getPrzedmiot_prowadzony()
 
 5. sala
 - Przechowuje typ i numer sali.
-- Metody: pokaz_dane()
+- Metody: pokaz_dane(), pokaz_dane_2(), zwroc_dane_s(), getNumer(), getTyp()
 
 6. lekcja
 - Reprezentuje jedną lekcję (przedmiot, typ, parzystość, sala, nauczyciel).
-- Metody: pokaz_dane()
+- Metody: pokaz_dane(), zwroc_dane_p(), getPrzedmiot(), getTyp(), getParzystosc(), getNauczyciel(), getSala()
 
-7. grupa
-- Przechowuje numer grupy i listę uczniów.
+7. lista (template)
+- Reprezentuje dynamiczną listę jednokierunkową.
+- Metody: push_back(), remove(), getHead()
+
+8. struktura_planow
+- Zawiera 6 planów dla 6 grup.
+- Metody: get_plan()
+

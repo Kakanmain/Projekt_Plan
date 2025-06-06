@@ -3,13 +3,10 @@ Projekt: Plan lekcji
 Celem projektu jest stworzenie programu do zarządzania planem lekcji. Program umożliwia tworzenie, wyświetlanie i modyfikowanie wielu planów lekcji, z uwzględnieniem dni tygodnia, godzin, sal, nauczycieli i uczniów.
 
 Główne funkcjonalności:
-Tworzenie szkieletu planu lekcji – tabela przedstawiająca dni tygodnia i godziny w odstępach 15-minutowych.
-
-Dodawanie nauczycieli, uczniów, sal i lekcji – każdy obiekt zawiera odpowiednie dane (np. imię, przedmiot, typ sali, parzystość tygodnia).
-
-Wyświetlanie planu – funkcja pokaz_plan() pokazuje siatkę zajęć.
-
-Wyszukiwanie informacji – po zapytaniu o przedmiot lub salę, program pokazuje kiedy i gdzie odbywają się zajęcia.
-
-Zarządzanie pamięcią dynamiczną – wszystkie obiekty tworzone są przy użyciu wskaźników i odpowiednio usuwane.
-
+- Tworzenie szkieletu planu lekcji – tabela przedstawiająca dni tygodnia i godziny w odstępach 15-minutowych.
+- Dodawanie uczniów.
+- Wyświetlanie planu – funkcja pokaz_plan() pokazuje siatkę zajęć dla wybranej grupy.
+- Wyszukiwanie informacji – po zapytaniu o przedmiot, nauczyciela lub salę, program pokazuje informacje o danym zapytaniu.
+- Zarządzanie pamięcią dynamiczną – obiekty tworzone są przy użyciu wskaźników i odpowiednio usuwane.
+- Zapis i odczyt danych z plików tekstowych.
+- Obsługa przeciążonych operatorów << dla danych klas.
