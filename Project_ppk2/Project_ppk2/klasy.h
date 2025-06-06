@@ -10,8 +10,8 @@
 #include <iomanip>
 
 /** @struct Node
- *  @brief Struktura wêz³a listy jednokierunkowej.
- *  @tparam t Typ danych przechowywany w liœcie.
+ *  @brief Struktura wezla listy jednokierunkowej.
+ *  @tparam t Typ danych przechowywany w liscie.
  */
 template <typename t>
 struct Node {
@@ -22,8 +22,8 @@ struct Node {
 };
 
 /** @class lista
- *  @brief Klasa listy jednokierunkowej do przechowywania wskaŸników na obiekty.
- *  @tparam t Typ wskaŸnika na obiekt.
+ *  @brief Klasa listy jednokierunkowej do przechowywania wskaznikow na obiekty.
+ *  @tparam t Typ wskaznika na obiekt.
  */
 template <typename t>
 class lista {
@@ -38,7 +38,7 @@ public:
 	}
 
 	/** @brief Dodaje element na koniec listy.
-	*  @param val Wartoœæ do dodania.
+	*  @param val Wartosc do dodania.
 	*/
 	void push_back(t val) {
 		Node<t>* newNode = new Node<t>(val);
@@ -52,7 +52,7 @@ public:
 		}
 	}
 
-	/** @brief Usuwa wszystkie elementy listy i zwalnia pamiêæ. */
+	/** @brief Usuwa wszystkie elementy listy i zwalnia pamiec. */
 	void remove(t val) {
 		if (head == nullptr) return;
 
@@ -93,7 +93,7 @@ public:
 
 
 /** @class osoba
- *  @brief Klasa bazowa dla osób – nauczycieli i uczniów.
+ *  @brief Klasa bazowa dla osob – nauczycieli i uczniow.
  */
 class osoba {
 	std::string imie, nazwisko;
@@ -122,7 +122,7 @@ public:
 };
 
 /** @class uczen
- *  @brief Klasa reprezentuj¹ca ucznia, dziedziczy po osobie.
+ *  @brief Klasa reprezentujaca ucznia, dziedziczy po osobie.
  */
 class uczen : public osoba{
 	std::string numer_gr;
@@ -150,7 +150,7 @@ public:
 };
 
 /** @class nauczyciel
- *  @brief Klasa reprezentuj¹ca nauczyciela, dziedziczy po osobie.
+ *  @brief Klasa reprezentujaca nauczyciela, dziedziczy po osobie.
  */
 class nauczyciel : public osoba {
 	std::string przedmiot_prowadzony;
@@ -178,7 +178,7 @@ public:
 };
 
 /** @class sala
- *  @brief Klasa reprezentuj¹ca salê lekcyjn¹.
+ *  @brief Klasa reprezentujaca sale lekcyjna.
  */
 class sala {
 	std::string typ; //wykladowa, laboratoiryjna, komputerowa, ogolna...
@@ -217,7 +217,7 @@ public:
 };
 
 /** @class lekcja
- *  @brief Klasa reprezentuj¹ca pojedyncz¹ lekcjê.
+ *  @brief Klasa reprezentujaca pojedyncza lekcje.
  */
 class lekcja {
 protected:
@@ -278,7 +278,7 @@ public:
 };
 
 /** @class plan
- *  @brief Klasa odpowiedzialna za reprezentacjê planu lekcji jako tabeli.
+ *  @brief Klasa odpowiedzialna za reprezentacje planu lekcji jako tabeli.
  */
 class plan : protected nauczyciel, protected sala {
 	int w = 57;
@@ -341,7 +341,7 @@ public:
 				tabela[i][0] = oss.str();
 			}
 
-			else { //tu s¹ minuty(co 15) mozna zakomentowac
+			else { //tu sa minuty(co 15) mozna zakomentowac
 				tabela[i][0] = oss.str();
 			}
 			m += 15;
@@ -376,15 +376,15 @@ public:
 		}
 	}
 
-	/** @brief Dodaje lekcjê do planu.
- *  @param h Godzina rozpoczêcia (np. 8).
- *  @param m Minuta rozpoczêcia (np. 15).
- *  @param dzien Dzieñ tygodnia.
+	/** @brief Dodaje lekcje do planu.
+ *  @param h Godzina rozpoczecia (np. 8).
+ *  @param m Minuta rozpoczecia (np. 15).
+ *  @param dzien Dzien tygodnia.
  *  @param przedmiot Nazwa przedmiotu.
- *  @param typ Typ zajêæ (CW, WYK, LAB...).
+ *  @param typ Typ zajec (CW, WYK, LAB...).
  *  @param ht Liczba godzin trwania.
  *  @param mt Liczba minut trwania.
- *  @param lekcje Lista dostêpnych lekcji do wyboru.
+ *  @param lekcje Lista dostepnych lekcji do wyboru.
  *  @param nr_gr Numer grupy.
  *  @param laduj czy nalezy ja ladowac do pliku zapis_planu.
  */

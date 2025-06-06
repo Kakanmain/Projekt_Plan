@@ -110,7 +110,7 @@ $(function(){initNavTree('classplan.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Klasa odpowiedzialna za reprezentacjê planu lekcji jako tabeli.  
+<p>Klasa odpowiedzialna za reprezentacje planu lekcji jako tabeli.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="klasy_8h_source.html">klasy.h</a>&gt;</code></p>
@@ -120,9 +120,9 @@ Inheritance diagram for plan:</div>
  <div class="center">
   <img src="classplan.png" usemap="#plan_map" alt=""/>
   <map id="plan_map" name="plan_map">
-<area href="classnauczyciel.html" title="Klasa reprezentuj¹ca nauczyciela, dziedziczy po osobie." alt="nauczyciel" shape="rect" coords="0,56,73,80"/>
-<area href="classsala.html" title="Klasa reprezentuj¹ca salê lekcyjn¹." alt="sala" shape="rect" coords="83,56,156,80"/>
-<area href="classosoba.html" title="Klasa bazowa dla osób – nauczycieli i uczniów." alt="osoba" shape="rect" coords="0,0,73,24"/>
+<area href="classnauczyciel.html" title="Klasa reprezentujaca nauczyciela, dziedziczy po osobie." alt="nauczyciel" shape="rect" coords="0,56,73,80"/>
+<area href="classsala.html" title="Klasa reprezentujaca sale lekcyjna." alt="sala" shape="rect" coords="83,56,156,80"/>
+<area href="classosoba.html" title="Klasa bazowa dla osob – nauczycieli i uczniow." alt="osoba" shape="rect" coords="0,0,73,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -141,7 +141,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>czy_sa_myslniki</b> (
 <tr class="memdesc:a08c504fbf058e218be08de49f80b6851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy na linijce x nie ma myslnikow, by nic nie dac na szkielet planu. <br /></td></tr>
 <tr class="separator:a08c504fbf058e218be08de49f80b6851"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cf67f21da5985f4d7059dddf728e331" id="r_a1cf67f21da5985f4d7059dddf728e331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cf67f21da5985f4d7059dddf728e331">dodaj_do_planu</a> (int h, int m, std::string dzien, std::string przedmiot, std::string typ, int ht, int mt, <a class="el" href="classlista.html">lista</a>&lt; <a class="el" href="classlekcja.html">lekcja</a> * &gt; &amp;lekcje, int nr_gr, bool laduj)</td></tr>
-<tr class="memdesc:a1cf67f21da5985f4d7059dddf728e331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje lekcjê do planu.  <br /></td></tr>
+<tr class="memdesc:a1cf67f21da5985f4d7059dddf728e331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje lekcje do planu.  <br /></td></tr>
 <tr class="separator:a1cf67f21da5985f4d7059dddf728e331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -210,7 +210,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getTyp</b> () 
 <tr class="separator:ae14b4cf4578810b7e75673117fd4b925 inherit pro_methods_classsala"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Klasa odpowiedzialna za reprezentacjê planu lekcji jako tabeli. </p>
+<div class="textblock"><p>Klasa odpowiedzialna za reprezentacje planu lekcji jako tabeli. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1cf67f21da5985f4d7059dddf728e331" name="a1cf67f21da5985f4d7059dddf728e331"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cf67f21da5985f4d7059dddf728e331">&#9670;&#160;</a></span>dodaj_do_planu()</h2>
@@ -279,17 +279,17 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getTyp</b> () 
 </table>
 </div><div class="memdoc">
 
-<p>Dodaje lekcjê do planu. </p>
+<p>Dodaje lekcje do planu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">h</td><td>Godzina rozpoczêcia (np. 8). </td></tr>
-    <tr><td class="paramname">m</td><td>Minuta rozpoczêcia (np. 15). </td></tr>
-    <tr><td class="paramname">dzien</td><td>Dzieñ tygodnia. </td></tr>
+    <tr><td class="paramname">h</td><td>Godzina rozpoczecia (np. 8). </td></tr>
+    <tr><td class="paramname">m</td><td>Minuta rozpoczecia (np. 15). </td></tr>
+    <tr><td class="paramname">dzien</td><td>Dzien tygodnia. </td></tr>
     <tr><td class="paramname">przedmiot</td><td>Nazwa przedmiotu. </td></tr>
-    <tr><td class="paramname">typ</td><td>Typ zajêæ (CW, WYK, LAB...). </td></tr>
+    <tr><td class="paramname">typ</td><td>Typ zajec (CW, WYK, LAB...). </td></tr>
     <tr><td class="paramname">ht</td><td>Liczba godzin trwania. </td></tr>
     <tr><td class="paramname">mt</td><td>Liczba minut trwania. </td></tr>
-    <tr><td class="paramname">lekcje</td><td>Lista dostêpnych lekcji do wyboru. </td></tr>
+    <tr><td class="paramname">lekcje</td><td>Lista dostepnych lekcji do wyboru. </td></tr>
     <tr><td class="paramname">nr_gr</td><td>Numer grupy. </td></tr>
     <tr><td class="paramname">laduj</td><td>czy nalezy ja ladowac do pliku zapis_planu. </td></tr>
   </table>

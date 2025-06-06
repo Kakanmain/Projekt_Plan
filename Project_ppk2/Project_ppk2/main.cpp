@@ -5,7 +5,7 @@ Przy stworzeniu planu, tworzy sie ogolny zarys planu lekcji. (Dni, liczba mozliw
 Plan bedzie tez mial kazdy nauczyciel i sala.
 Plan mozna wyswietlic, co bedzie pokazywalo zajecia, godziny, itp. GIT
 Po zapytaniu o przedmiot pokaze kiedy jest w jakiej sali. GIT
-Mo¿e dawanie danych do listy z pliku? GIT
+Moze dawanie danych do listy z pliku? GIT
 */
 
 #include <iostream>
@@ -55,8 +55,8 @@ void alt(std::string& p) {
 	}
 }
 
-/** @brief Obs³uguje interfejs zwi¹zany z planem lekcji.
- *  Umo¿liwia wyœwietlanie i dodawanie lekcji do planu.
+/** @brief Obsluguje interfejs zwiazany z planem lekcji.
+ *  Umozliwia wyswietlanie i dodawanie lekcji do planu.
  */
 void f_plan(struktura_planow& plany, lista<lekcja*>& lekcje) {
 	int odp, godzina, minuta, godzina_trwa, minuta_trwa;
@@ -120,8 +120,8 @@ void f_plan(struktura_planow& plany, lista<lekcja*>& lekcje) {
 	}
 }
 
-/** @brief Obs³uguje interfejs zwi¹zany z uczniami.
- *  Umo¿liwia wyœwietlanie danych i dodawanie uczniow.
+/** @brief Obsluguje interfejs zwiazany z uczniami.
+ *  Umozliwia wyswietlanie danych i dodawanie uczniow.
  */
 void f_uczen(lista<uczen*>& uczniowie, struktura_planow& plany) {
 	std::string imie, nazwisko, nr_gr;
@@ -205,8 +205,8 @@ void f_uczen(lista<uczen*>& uczniowie, struktura_planow& plany) {
 	}
 }
 
-/** @brief Obs³uguje interfejs zwi¹zany z nauczycielami.
- *  Umo¿liwia wyœwietlanie danych nauczycieli
+/** @brief Obsluguje interfejs zwiazany z nauczycielami.
+ *  Umozliwia wyswietlanie danych nauczycieli
  */
 void f_nauczyciel(lista<nauczyciel*>& nauczyciele, struktura_planow& plany, lista<lekcja*>& lekcje) {
 	{
@@ -316,8 +316,8 @@ void f_nauczyciel(lista<nauczyciel*>& nauczyciele, struktura_planow& plany, list
 	}
 }
 
-/** @brief Obs³uguje interfejs zwi¹zany z lekcjami.
- *  Umo¿liwia wyœwietlanie danych lekcji
+/** @brief Obsluguje interfejs zwiazany z lekcjami.
+ *  Umozliwia wyswietlanie danych lekcji
  */
 void f_lekcji(lista<lekcja*>& lekcje) {
 	{
@@ -415,8 +415,8 @@ void f_lekcji(lista<lekcja*>& lekcje) {
 	}
 }
 
-/** @brief Obs³uguje interfejs zwi¹zany z salami.
- *  Umo¿liwia wyœwietlanie danych sal
+/** @brief Obsluguje interfejs zwiazany z salami.
+ *  Umozliwia wyswietlanie danych sal
  */
 void f_sala(lista<sala*>& sale, lista<lekcja*>& lekcje) {
 	{

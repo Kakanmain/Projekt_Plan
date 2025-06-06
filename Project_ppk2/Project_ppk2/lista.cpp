@@ -7,7 +7,7 @@
 
 #include "klasy.h"
 
-/** @brief Wczytuje nauczycieli, uczniów, lekcje, sale i plan.
+/** @brief Wczytuje nauczycieli, uczniow, lekcje, sale i plan.
  */
 void inicjalizuj(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista<lekcja*>& lekcje, lista<sala*>& sale, struktura_planow& plany) {
 	// SALE
@@ -232,10 +232,10 @@ void usun_listy(lista<nauczyciel*>& nauczyciele, lista<uczen*>& uczniowie, lista
 	}
 }
 
-/** @brief Przeci¹¿ony operator << dla klasy uczen.
- *  @param os Strumieñ wyjœciowy.
- *  @param u WskaŸnik na ucznia.
- *  @return Referencja do strumienia wyjœciowego.
+/** @brief Przeciazony operator << dla klasy uczen.
+ *  @param os Strumien wyjsciowy.
+ *  @param u Wskaznik na ucznia.
+ *  @return Referencja do strumienia wyjsciowego.
  */
 std::ostream& operator<<(std::ostream& os, const uczen* u) { // uczen
 	if (!u) return os;
@@ -249,10 +249,10 @@ std::ostream& operator<<(std::ostream& os, const uczen* u) { // uczen
 	return os;
 }
 
-/** @brief Przeci¹¿ony operator << dla klasy nauczyciel.
- *  @param os Strumieñ wyjœciowy.
- *  @param u WskaŸnik na nauczyciela.
- *  @return Referencja do strumienia wyjœciowego.
+/** @brief Przeciazony operator << dla klasy nauczyciel.
+ *  @param os Strumien wyjsciowy.
+ *  @param u Wskaznik na nauczyciela.
+ *  @return Referencja do strumienia wyjsciowego.
  */
 std::ostream& operator<<(std::ostream& os, const nauczyciel* n) { // nauczyciel
 	if (!n) return os;
@@ -266,10 +266,10 @@ std::ostream& operator<<(std::ostream& os, const nauczyciel* n) { // nauczyciel
 	return os;
 }
 
-/** @brief Przeci¹¿ony operator << dla klasy sala.
- *  @param os Strumieñ wyjœciowy.
- *  @param u WskaŸnik na sale.
- *  @return Referencja do strumienia wyjœciowego.
+/** @brief Przeciazony operator << dla klasy sala.
+ *  @param os Strumien wyjsciowy.
+ *  @param u Wskaznik na sale.
+ *  @return Referencja do strumienia wyjsciowego.
  */
 std::ostream& operator<<(std::ostream& os, const sala* s) { // sala
 	if (!s) return os;
@@ -280,10 +280,10 @@ std::ostream& operator<<(std::ostream& os, const sala* s) { // sala
 	return os;
 }
 
-/** @brief Przeci¹¿ony operator << dla klasy lekcja.
- *  @param os Strumieñ wyjœciowy.
- *  @param u WskaŸnik na lekcje.
- *  @return Referencja do strumienia wyjœciowego.
+/** @brief Przeciazony operator << dla klasy lekcja.
+ *  @param os Strumien wyjsciowy.
+ *  @param u Wskaznik na lekcje.
+ *  @return Referencja do strumienia wyjsciowego.
  */
 std::ostream& operator<<(std::ostream& os, const lekcja* l) { // lekcja
 	if (!l) return os;
